@@ -1,0 +1,22 @@
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .card {
+    margin: 8px;
+    cursor: pointer;
+  }
+}
+
+.router-link-active{
+  color: #f969d6;
+}
+
+.card-body{
+  gap: 0 !important;
+}
+
+.card{
+  overflow: hidden;
+}
