@@ -2,30 +2,33 @@
   <div class="upload-wrapper mt-24 mb-64" v-if="!isAccountLoggedIn">
     <div>
       <label class="label">
-        <span class="label-text">{{ $t('email') }}</span>
+        <span class="label-text">New password</span>
       </label>
       <input
         class="input input-bordered w-full max-w-xs"
-        :class="v$.email.$error ? 'error' : ''"
-        id="Email"
-        v-model="formData.email"
-        type="text"
-        :placeholder="$t('email')"
+        :class="v$.password.$error ? 'error' : ''"
+        id="password"
+        v-model="formData.password"
+        type="password"
+        placeholder="Password"
       />
-      <div v-if="v$.email.$error">Invalid email</div>
+      <div
+        style="margin-top: 4px; color: rgb(121, 0, 0)"
+        v-if="v$.password.$error"
+      >
+        Password minimum 6 characters
+      </div>
     </div>
 
     <button
-      style="margin-top: 16px"
-      class="btn btn-sm"
       @click="login"
       :disabled="v$.$error"
+      style="margin-top: 16px"
+      class="btn btn-sm"
     >
-      {{$t("resetPassword")}}
+      {{ $t("resetPassword") }}
     </button>
     <br />
-    <button @click="goToRegister" class="btn btn-sm">      {{$t("login")}}
-</button>
   </div>
   <div v-else>Aleady logged in</div>
 </template>
@@ -38,33 +41,32 @@ import { useVuelidate } from "@vuelidate/core";
 
 const rules = computed(() => {
   return {
-    email: { required, minLength: minLength(4) },
+    password: { required, minLength: minLength(6) },
   };
 });
-const goToRegister = () => {
-  router.push({ path: `/login` });
-};
-const formData = reactive({ email: "" });
+const formData = reactive({ password: "" });
 const v$ = useVuelidate(rules, formData);
+
 const router = useRouter();
 const accountInfoStore = useAccountInfo();
 const { isAccountLoggedIn } = storeToRefs(accountInfoStore);
 
 async function login() {
   v$.value.$validate();
-  console.log(v$.value.email.$error);
+  console.log(v$.value.password.$error);
   if (!v$.value.$error) {
-    await $fetch(`http://localhost:3030/api/users/forgotPassword`, {
+    await $fetch(`http://localhost:3030/api/users/resetPassword`, {
       method: "POST",
       body: {
-        email: formData.email,
+        newPassword: formData.password,
+        token: router.currentRoute.value.query.token,
       },
 
       onResponse(res) {
         console.log(res);
         if (res.response.status === 200) {
           useNuxtApp().$toast.success(
-            "Please click the link in your email to reset your password",
+            "Your password was successfuly changed!",
             {
               autoClose: 3000,
               dangerouslyHTMLString: true,
@@ -74,8 +76,8 @@ async function login() {
           );
 
           setTimeout(() => {
-            router.push({ path: `/` });
-          }, 2000);
+            router.push({ path: `/login` });
+          }, 1000);
         } else {
         }
       },
@@ -90,6 +92,7 @@ async function login() {
             position: "bottom-center",
           }
         );
+
       },
     });
   } else {

@@ -85,6 +85,7 @@ export default defineI18nConfig(() => ({
             search: "Search",
             searchResult: "Search results for",
             noResult: "No result found",
+            resetPassword: "Reset password",
             },
         kr: {
             welcome: "Bienvenue",
@@ -170,6 +171,7 @@ export default defineI18nConfig(() => ({
             search: "검색",
             searchResult: "검색 결과",
             noResult: "결과를 찾을 수 없습니다",
+            resetPassword: "비밀번호 재설정",
             
         },
         cn: {
@@ -255,6 +257,8 @@ export default defineI18nConfig(() => ({
             search: "搜索",
             searchResult: "搜索结果",
             noResult: "未找到结果",
+            resetPassword: "重置密码",
+
             },
     },
 }));

@@ -39,7 +39,7 @@
             <!-- Sidebar content here -->
             <LanguageSelector></LanguageSelector>
             <li></li>
-            <li @click="toggleDrawer" >
+            <li @click="toggleDrawer">
               <NuxtLink :to="localePath('/')" class="py-3">
                 <Icon name="mdi:home" size="20" />
                 {{ $t("home") }}
@@ -95,16 +95,11 @@
       >
     </div>
     <div class="flex-none">
-
-
       <LanguageSelector class="max-sm:!hidden"></LanguageSelector>
 
       <NuxtLink :to="localePath('/search')" class="btn btn-sm btn-ghost ml-1">
-                 
         <Icon name="mdi:magnify" size="20" />
-
-        </NuxtLink
-                >
+      </NuxtLink>
       <div class="flex-none">
         <div class="drawer drawer-end">
           <input id="my-drawer2" type="checkbox" class="drawer-toggle" />
@@ -220,6 +215,12 @@
         </div>
       </div>
     </div>
+
+    <div class="secdondary-nav"
+    :class="{ 'secdondary-nav-active': hasScrolled }"
+>
+      <button class="btn btn-sm">Special sales</button>
+    </div>
   </div>
 </template>
 
@@ -264,13 +265,18 @@ onUnmounted(() => {
 });
 
 if (token.value) {
-  await useLazyFetch(`https://sexkbj.tv/api/users/getInfo`, {
+  await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
     server: false,
     credentials: "include",
 
     onResponse(res) {
-      accountInfoStore.updateAccountInfo(res.response._data.userDB);
-      accountInfoStore.triggerAccountLogin(true);
+      if (res.response._data.error !== "Forbidden") {
+        accountInfoStore.updateAccountInfo(res.response._data.userDB);
+        accountInfoStore.triggerAccountLogin(true);
+      } else {
+        accountInfoStore.triggerAccountLogin(false);
+        token.value = null
+      }
     },
     onResponseError(err) {
       if ((err.response._data.error = "Forbidden")) {
@@ -288,6 +294,15 @@ function logout() {
 </script>
 
 <style lang="scss" scoped>
+.secdondary-nav{
+  display: none;
+  position: absolute;
+  bottom: -36px;
+}
+
+.secdondary-nav-active {
+  display: initial !important;
+}
 .navbar {
   position: fixed;
   z-index: 99;

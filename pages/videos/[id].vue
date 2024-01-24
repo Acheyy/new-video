@@ -2,54 +2,101 @@
   <PlayerSkeletonError v-if="error"> </PlayerSkeletonError>
   <PlayerSkeleton v-if="pending"> </PlayerSkeleton>
   <div class="left-content" v-if="!pending && !error">
-    <div class="player-wrapper relative mt-10 skeleton bg-base-200" style="overflow: hidden" v-if="video.tags.some((tag) => tag.name === 'vip') &&
-      !accountDetails.isUserPremium
-      ">
-      <img class="main-player absolute bg-base-200" :src="video.thumbnail" :alt="video.name"
-        style="filter: blur(15px); opacity: 1; object-fit: cover" />
-      <div class="vip-upgrade-container absolute toast toast-center toast-middle">
+    <div
+      class="player-wrapper relative mt-10 skeleton bg-base-200"
+      style="overflow: hidden"
+      v-if="
+        video.tags.some((tag) => tag.name === 'vip') &&
+        !accountDetails.isUserPremium
+      "
+    >
+      <img
+        class="main-player absolute bg-base-200"
+        :src="video.thumbnail"
+        :alt="video.name"
+        style="filter: blur(15px); opacity: 1; object-fit: cover"
+      />
+      <div
+        class="vip-upgrade-container absolute toast toast-center toast-middle"
+      >
         <div class="alert" v-if="isAccountLoggedIn">
           <span>{{ $t("requiresVipAccess") }}</span>
-          <button class="btn btn-warning btn-sm" onclick="my_modal_1.showModal()">
+          <button
+            class="btn btn-warning btn-sm"
+            onclick="my_modal_1.showModal()"
+          >
             {{ $t("upgradeToVip") }}
           </button>
         </div>
         <div class="alert" v-else>
           <span> {{ $t("youNeedLogin") }}</span>
-          <NuxtLink :to="localePath('/login')" class="btn btn-sm btn-secondary">{{ $t("login") }}</NuxtLink>
-          <NuxtLink :to="localePath('/register')" class="btn btn-sm btn-secondary">{{ $t("register") }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/login')"
+            class="btn btn-sm btn-secondary"
+            >{{ $t("login") }}</NuxtLink
+          >
+          <NuxtLink
+            :to="localePath('/register')"
+            class="btn btn-sm btn-secondary"
+            >{{ $t("register") }}</NuxtLink
+          >
         </div>
       </div>
     </div>
 
-    <div class="player-wrapper relative mt-10 skeleton bg-base-200" style="overflow: hidden" v-if="video.cost > 0 && !accountDetails.purchasedVideos.includes(video._id)
-      ">
-      <img class="main-player absolute bg-base-200" :src="video.thumbnail" :alt="video.name"
-        style="filter: blur(15px); opacity: 1; object-fit: cover" />
-      <div class="vip-upgrade-container absolute toast toast-center toast-middle">
-        <div class="alert max-w-xl flex flex-wrap text-center justify-center" v-if="isAccountLoggedIn">
+    <div
+      class="player-wrapper relative mt-10 skeleton bg-base-200"
+      style="overflow: hidden"
+      v-if="
+        video.cost > 0 && !accountDetails.purchasedVideos.includes(video._id)
+      "
+    >
+      <img
+        class="main-player absolute bg-base-200"
+        :src="video.thumbnail"
+        :alt="video.name"
+        style="filter: blur(15px); opacity: 1; object-fit: cover"
+      />
+      <div
+        class="vip-upgrade-container absolute toast toast-center toast-middle"
+      >
+        <div
+          class="alert max-w-xl flex flex-wrap text-center justify-center"
+          v-if="isAccountLoggedIn"
+        >
           <div class="badge w-16 badge-outline badge-warning custom-coin">
             {{ video.cost }} <IconsCoin></IconsCoin>
           </div>
 
           <span>{{ $t("purchaseVideo") }}</span>
-          <button class="btn btn-secondary btn-sm" onclick="my_modal_2.showModal()"
-            v-if="isAccountLoggedIn && accountDetails.credit < video.cost">
+          <button
+            class="btn btn-secondary btn-sm"
+            onclick="my_modal_2.showModal()"
+            v-if="isAccountLoggedIn && accountDetails.credit < video.cost"
+          >
             {{ $t("purchaseCoins") }}
           </button>
           <div v-else-if="isAccountLoggedIn">
-            <button class="btn btn-sm btn-outline btn-warning purchase-button-link" v-if="!purchaseClicked"
-              @click="purchaseClicked = true">
+            <button
+              class="btn btn-sm btn-outline btn-warning purchase-button-link"
+              v-if="!purchaseClicked"
+              @click="purchaseClicked = true"
+            >
               {{ $t("purchaseVideoBTN") }}
             </button>
             <div v-else>
               {{ $t("areYouSure") }}
-              <button class="btn btn-sm btn-outline btn-success purchase-button-link mr-2" @click="purchaseVideo"
-                :disabled="isPurchasing">
+              <button
+                class="btn btn-sm btn-outline btn-success purchase-button-link mr-2"
+                @click="purchaseVideo"
+                :disabled="isPurchasing"
+              >
                 {{ $t("yes") }}
               </button>
-              <button class="btn btn-sm btn-outline btn-error purchase-button-link red-btt"
-                @click="purchaseClicked = false">
+              <button
+                class="btn btn-sm btn-outline btn-error purchase-button-link red-btt"
+                @click="purchaseClicked = false"
+              >
                 {{ $t("no") }}
               </button>
             </div>
@@ -57,53 +104,111 @@
         </div>
         <div class="alert" v-else>
           <span> {{ $t("youNeedLogin") }}</span>
-          <NuxtLink :to="localePath('/login')" class="btn btn-sm btn-secondary">{{ $t("login") }}</NuxtLink>
-          <NuxtLink :to="localePath('/register')" class="btn btn-sm btn-secondary">{{ $t("register") }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/login')"
+            class="btn btn-sm btn-secondary"
+            >{{ $t("login") }}</NuxtLink
+          >
+          <NuxtLink
+            :to="localePath('/register')"
+            class="btn btn-sm btn-secondary"
+            >{{ $t("register") }}</NuxtLink
+          >
         </div>
       </div>
     </div>
 
-    <div class="player-wrapper relative mt-10 skeleton bg-base-200" v-if="!(
-        video.tags.some((tag) => tag.name === 'vip') &&
-        !accountDetails.isUserPremium
-      ) &&
-      !(video.cost > 0 && !accountDetails.purchasedVideos.includes(video._id))
-      ">
-      <iframe id="custom-iframe" :src="'https://iframe.mediadelivery.net/embed/141502/' + route.params.id
-        " loading="lazy" class="main-player absolute bg-base-200" :class="{ 'is-loaded': iframeLoaded }"
-        @load="iframeHasLoaded" allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
-        v-if="sourceSB && video.createdAt > '2023-07-26T00:19:34.582Z'" allowfullscreen="true"></iframe>
-      <iframe id="custom-iframe" :src="'https://sbhight.com/e/' + route.params.id + '.html'" loading="lazy"
-        class="main-player absolute bg-base-200" :class="{ 'is-loaded': iframeLoaded }" @load="iframeHasLoaded"
+    <div
+      class="player-wrapper relative mt-10 skeleton bg-base-200"
+      v-if="
+        !(
+          video.tags.some((tag) => tag.name === 'vip') &&
+          !accountDetails.isUserPremium
+        ) &&
+        !(video.cost > 0 && !accountDetails.purchasedVideos.includes(video._id))
+      "
+    >
+      <iframe
+        id="custom-iframe"
+        :src="
+          'https://iframe.mediadelivery.net/embed/141502/' + route.params.id
+        "
+        loading="lazy"
+        class="main-player absolute bg-base-200"
+        :class="{ 'is-loaded': iframeLoaded }"
+        @load="iframeHasLoaded"
         allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
-        v-if="sourceSB && video.createdAt <= '2023-07-26T00:19:34.582Z'" allowfullscreen="true"></iframe>
-      <iframe id="custom-iframe" :src="'https://guccihide.com/e/' + video.uploadID2" loading="lazy"
-        class="main-player absolute bg-base-200" :class="{ 'is-loaded': iframeLoaded }" @load="iframeHasLoaded"
+        v-if="sourceSB && video.createdAt > '2023-07-26T00:19:34.582Z'"
+        allowfullscreen="true"
+      ></iframe>
+      <iframe
+        id="custom-iframe"
+        :src="'https://sbhight.com/e/' + route.params.id + '.html'"
+        loading="lazy"
+        class="main-player absolute bg-base-200"
+        :class="{ 'is-loaded': iframeLoaded }"
+        @load="iframeHasLoaded"
         allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
-        v-if="sourceHide && video.createdAt <= '2023-07-26T00:19:34.582Z'" allowfullscreen="true"></iframe>
-      <iframe id="custom-iframe" :src="'https://streamwish.to/e/' + video.uploadID3" loading="lazy"
-        class="main-player absolute bg-base-200" :class="{ 'is-loaded': iframeLoaded }" @load="iframeHasLoaded"
+        v-if="sourceSB && video.createdAt <= '2023-07-26T00:19:34.582Z'"
+        allowfullscreen="true"
+      ></iframe>
+      <iframe
+        id="custom-iframe"
+        :src="'https://guccihide.com/e/' + video.uploadID2"
+        loading="lazy"
+        class="main-player absolute bg-base-200"
+        :class="{ 'is-loaded': iframeLoaded }"
+        @load="iframeHasLoaded"
         allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
-        v-if="sourceWish && video.createdAt <= '2023-07-26T00:19:34.582Z'" allowfullscreen="true"></iframe>
-      <PremiumPlayer v-if="sourceVIP" :source="'https://skbjvid.b-cdn.net/videos/' + video.fileName"></PremiumPlayer>
+        v-if="sourceHide && video.createdAt <= '2023-07-26T00:19:34.582Z'"
+        allowfullscreen="true"
+      ></iframe>
+      <iframe
+        id="custom-iframe"
+        :src="'https://streamwish.to/e/' + video.uploadID3"
+        loading="lazy"
+        class="main-player absolute bg-base-200"
+        :class="{ 'is-loaded': iframeLoaded }"
+        @load="iframeHasLoaded"
+        allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
+        v-if="sourceWish && video.createdAt <= '2023-07-26T00:19:34.582Z'"
+        allowfullscreen="true"
+      ></iframe>
+      <PremiumPlayer
+        v-if="sourceVIP"
+        :source="'https://skbjvid.b-cdn.net/videos/' + video.fileName"
+      ></PremiumPlayer>
     </div>
     <div class="sources justify-between">
       <div class="sources">
         <button class="btn btn-sm btn-neutral m-1" @click="changeToSB">
           Source 1
         </button>
-        <button class="btn btn-sm btn-neutral m-1" @click="changeToHide" v-if="video.createdAt >= '2023-05-02T05:55:10.089+00:00' &&
-          video.createdAt <= '2023-07-26T00:19:34.582Z'
-          ">
+        <button
+          class="btn btn-sm btn-neutral m-1"
+          @click="changeToHide"
+          v-if="
+            video.createdAt >= '2023-05-02T05:55:10.089+00:00' &&
+            video.createdAt <= '2023-07-26T00:19:34.582Z'
+          "
+        >
           Source 2
         </button>
-        <button class="btn btn-sm btn-neutral m-1" @click="changeToWish" v-if="video.createdAt >= '2023-05-10T06:08:02.528+00:00' &&
-          video.createdAt <= '2023-07-26T00:19:34.582Z'
-          ">
+        <button
+          class="btn btn-sm btn-neutral m-1"
+          @click="changeToWish"
+          v-if="
+            video.createdAt >= '2023-05-10T06:08:02.528+00:00' &&
+            video.createdAt <= '2023-07-26T00:19:34.582Z'
+          "
+        >
           Source 3
         </button>
-        <button class="btn btn-sm btn-neutral m-1" @click="changeToVIP"
-          v-if="video.createdAt >= '2023-05-01T22:07:18.813+00:00'">
+        <button
+          class="btn btn-sm btn-neutral m-1"
+          @click="changeToVIP"
+          v-if="video.createdAt >= '2023-05-01T22:07:18.813+00:00'"
+        >
           VIP Source
         </button>
       </div>
@@ -129,29 +234,77 @@
       {{ video?.name ? video.name : "Loading.." }}
     </h1>
     <p>
-      <NuxtLink class="btn btn-xs m-1 capitalize text-xs" :class="tag._id == '643adac05767bb0f8517fec8'
-          ? 'btn-warning'
-          : 'btn-secondary'
-        " v-for="(tag, index) in video?.tags">
+      <NuxtLink
+        class="btn btn-xs m-1 capitalize text-xs"
+        :class="
+          tag._id == '643adac05767bb0f8517fec8'
+            ? 'btn-warning'
+            : 'btn-secondary'
+        "
+        v-for="(tag, index) in video?.tags"
+      >
         {{ tag.name }}
       </NuxtLink>
     </p>
 
     <div class="text-center mt-2">
-      <NuxtLink class="inline-block" :to="localePath('/bj-list/' + video?.actor.name)">
-        <CardBJBigger :data="video?.actor" :likesCount="video?.actor.likes.length"></CardBJBigger>
+      <button class="btn" onclick="my_modal_3.showModal()">
+        {{ $t("screenShots") }}
+      </button>
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box max-w-7xl">
+          <div
+            class="snapshots flex flex-wrap justify-center"
+            v-if="video.snapshots.length"
+          >
+            <NuxtImg
+              class="m-1"
+              format="webp"
+              :src="snapshot"
+              v-for="(snapshot, index) in video.snapshots"
+              :alt="video.name + ' ' + (index + 1)"
+              :title="video.name + ' ' + (index + 1)"
+            />
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">{{ $t("close") }}</button>
+            </form>
+          </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+    </div>
+    <div class="text-center mt-2">
+      <NuxtLink
+        class="inline-block"
+        :to="localePath('/bj-list/' + video?.actor.name)"
+      >
+        <CardBJBigger
+          :data="video?.actor"
+          :likesCount="video?.actor.likes.length"
+        ></CardBJBigger>
       </NuxtLink>
     </div>
     <div class="divider divider-neutral"></div>
 
-    <h3 class="text-center text-xl mt-4 mb-2">{{$t("seeAlso")}}:</h3>
+    <h3 class="text-center text-xl mt-4 mb-2">{{ $t("seeAlso") }}:</h3>
 
     <div class="cards-wrapper">
-      <CardLoading v-for="index in Array.from({ length: 10 }, (v, k) => k + 1)" :key="index" v-if="pendingRecommended">
+      <CardLoading
+        v-for="index in Array.from({ length: 10 }, (v, k) => k + 1)"
+        :key="index"
+        v-if="pendingRecommended"
+      >
       </CardLoading>
-      <Card v-else v-for="(video, index) in videosRecommended" :data="video"></Card>
+      <Card
+        v-else
+        v-for="(video, index) in videosRecommended"
+        :data="video"
+      ></Card>
     </div>
-
   </div>
 </template>
 
@@ -244,18 +397,23 @@ onMounted(() => {
   }, 250); // Adjust the timeout as necessary
 });
 
-const { pending, data: video, error } = await useLazyFetch(
-  `https://sexkbj.tv/api/videos/${route.params.id}`,
-  {
-    credentials: "include",
-    headers,
-    onResponseError(err) {
-      if ((err.response._data.error = "Forbidden")) {
-        accountInfoStore.triggerAccountLogin(false);
-      }
-    },
+const {
+  pending,
+  data: video,
+  error,
+} = await useLazyFetch(`http://localhost:3030/api/videos/${route.params.id}`, {
+  credentials: "include",
+  headers,
+  onResponse(res) {
+    console.log(res);
   },
-);
+  onResponseError(err) {
+    console.log(err);
+    if ((err.response._data.error = "Forbidden")) {
+      accountInfoStore.triggerAccountLogin(false);
+    }
+  },
+});
 
 // if (!video?.value) {
 //   throw createError({
@@ -265,8 +423,7 @@ const { pending, data: video, error } = await useLazyFetch(
 // }
 
 const { pending: pendingRecommended, data: videosRecommended } =
-  await useLazyFetch(`https://sexkbj.tv/api/videos/random`, {
-  });
+  await useLazyFetch(`http://localhost:3030/api/videos/random`, {});
 
 watch(
   [video, accountDetails],
@@ -288,16 +445,22 @@ watch(
       }
 
       useSeoMeta({
-      title: `${newVideo.name} - SexKBJ`,
-      twitterTitle: `${newVideo.name} - SexKBJ`,
-      ogTitle: `${newVideo.name} - SexKBJ`,
-      description: `${newVideo.name} - ${newVideo.actor.name} - ${$t("highQuality")}`,
-      ogDescription: `${newVideo.name} - ${newVideo.actor.name} - ${$t("highQuality")}`,
-      twitterDescription: `${newVideo.name} - ${newVideo.actor.name} - ${$t("highQuality")}`,
-      ogImage: `${newVideo.thumbnail}`,
-      twitterImage: `${newVideo.thumbnail}`,
-      twitterCard: `summary_large_image`,
-    });
+        title: `${newVideo.name} - SexKBJ`,
+        twitterTitle: `${newVideo.name} - SexKBJ`,
+        ogTitle: `${newVideo.name} - SexKBJ`,
+        description: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
+          "highQuality"
+        )}`,
+        ogDescription: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
+          "highQuality"
+        )}`,
+        twitterDescription: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
+          "highQuality"
+        )}`,
+        ogImage: `${newVideo.thumbnail}`,
+        twitterImage: `${newVideo.thumbnail}`,
+        twitterCard: `summary_large_image`,
+      });
     }
   },
   { immediate: true }
@@ -321,7 +484,7 @@ const like = async () => {
     likesCount.value--;
   }
 
-  fetch(`https://sexkbj.tv/api/videos/like/${video.value._id}`, {
+  fetch(`http://localhost:3030/api/videos/like/${video.value._id}`, {
     credentials: "include",
   });
 };
@@ -332,7 +495,7 @@ async function purchaseVideo() {
 
   try {
     const response = await $fetch(
-      `https://sexkbj.tv/api/users/purchaseVideo`,
+      `http://localhost:3030/api/users/purchaseVideo`,
       {
         method: "POST",
         body: {
@@ -352,7 +515,7 @@ async function purchaseVideo() {
       });
     } else {
       // If no error, update account info
-      await $fetch(`https://sexkbj.tv/api/users/getInfo`, {
+      await $fetch(`http://localhost:3030/api/users/getInfo`, {
         server: false,
         credentials: "include",
         onResponse(res) {
@@ -376,7 +539,7 @@ async function purchaseVideo() {
         position: "bottom-center",
       }
     );
-    await $fetch(`https://sexkbj.tv/api/users/getInfo`, {
+    await $fetch(`http://localhost:3030/api/users/getInfo`, {
       server: false,
       credentials: "include",
       onResponse(res) {
@@ -421,17 +584,22 @@ async function purchaseVideo() {
 
 if (video.value && video.value.actor) {
   useSeoMeta({
-  title: `${video.value.name} - SexKBJ`,
-  twitterTitle: `${video.value.name} - SexKBJ`,
-  ogTitle: `${video.value.name} - SexKBJ`,
-  description: `${video.value.name} - ${video.value.actor.name} - ${$t("highQuality")}`,
-  ogDescription: `${video.value.name} - ${video.value.actor.name} - ${$t("highQuality")}`,
-  twitterDescription: `${video.value.name} - ${video.value.actor.name} - ${$t("highQuality")}`,
-  ogImage: `${video.value.thumbnail}`,
-  twitterImage: `${video.value.thumbnail}`,
-  twitterCard: `summary_large_image`,
-});
-
+    title: `${video.value.name} - SexKBJ`,
+    twitterTitle: `${video.value.name} - SexKBJ`,
+    ogTitle: `${video.value.name} - SexKBJ`,
+    description: `${video.value.name} - ${video.value.actor.name} - ${$t(
+      "highQuality"
+    )}`,
+    ogDescription: `${video.value.name} - ${video.value.actor.name} - ${$t(
+      "highQuality"
+    )}`,
+    twitterDescription: `${video.value.name} - ${video.value.actor.name} - ${$t(
+      "highQuality"
+    )}`,
+    ogImage: `${video.value.thumbnail}`,
+    twitterImage: `${video.value.thumbnail}`,
+    twitterCard: `summary_large_image`,
+  });
 }
 </script>
 
@@ -454,7 +622,6 @@ if (video.value && video.value.actor) {
   }
 }
 
-
 .custom-coin {
   display: flex;
   align-items: center;
@@ -470,5 +637,10 @@ if (video.value && video.value.actor) {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.modal-box .snapshots img {
+  width: 100%;
+  max-width: 300px;
 }
 </style>
