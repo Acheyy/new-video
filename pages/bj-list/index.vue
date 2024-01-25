@@ -1,5 +1,19 @@
 <template>
   <h1 class="text-xl mt-8 mb-2 text-center">{{ $t("BJlist") }}</h1>
+  <div class="order-by text-center">
+    <span>{{$t('orderBy')}}: </span>
+
+    <select
+      class="select select-sm select-bordered max-w-xs"
+      v-model="selectedOrder"
+    >
+      <option value="default">{{$t('default')}}</option>
+      <option value="alphabetic">{{$t('alphabetic')}}</option>
+      <option value="most_videos">{{$t('totalVideos')}}</option>
+      <option value="most_followers">{{$t('totalFollowers')}}</option>
+    </select>
+  </div>
+
   <div class="cards-wrapper">
     <CardBJError
       v-for="index in Array.from({ length: 30 }, (v, k) => k + 1)"
@@ -49,12 +63,17 @@ import { useI18n } from "vue-i18n";
 const { t: $t } = useI18n();
 const router = useRouter();
 const route = useRoute();
+const selectedOrder = ref("default"); // default value as empty string
+
+watch(selectedOrder, (newValue) => {
+  router.push({ query: { ...route.query, order: newValue } });
+});
 
 watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("BJlist")} | Page ${route.query.page} - SexKBJ`,
+      title: `${$t("BJlist")} | Page ${route.query.page ? route.query.page : '1'} | Order ${route.query.order ? route.query.order : 'default'} - SexKBJ`,
       twitterTitle: `${$t("BJlist")} - SexKBJ`,
       ogTitle: `${$t("BJlist")}`,
       description: `${$t("bestGirls")}`,
@@ -88,7 +107,7 @@ const {
   error,
 } = await useLazyFetch(
   () =>
-    `https://sexkbj.tv/api/actors?page=${router.currentRoute.value.query.page}`,
+    `https://sexkbj.tv/api/actors?page=${router.currentRoute.value.query.page}&order=${router.currentRoute.value.query.order}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {

@@ -76,6 +76,12 @@
               >
             </li>
             <li @click="toggleDrawer">
+              <NuxtLink :to="localePath('/galleries')" class="py-3"
+                ><Icon name="mdi:gift" size="20" />
+                Galleries</NuxtLink
+              >
+            </li>
+            <li @click="toggleDrawer">
               <NuxtLink :to="localePath('/contact')" class="py-3"
                 ><Icon name="mdi:email" size="20" />
                 {{ $t("contact") }}</NuxtLink
@@ -216,11 +222,6 @@
       </div>
     </div>
 
-    <div class="secdondary-nav"
-    :class="{ 'secdondary-nav-active': hasScrolled }"
->
-      <button class="btn btn-sm">Special sales</button>
-    </div>
   </div>
 </template>
 
@@ -265,7 +266,7 @@ onUnmounted(() => {
 });
 
 if (token.value) {
-  await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
+  await useLazyFetch(`https://sexkbj.tv/api/users/getInfo`, {
     server: false,
     credentials: "include",
 
@@ -294,15 +295,6 @@ function logout() {
 </script>
 
 <style lang="scss" scoped>
-.secdondary-nav{
-  display: none;
-  position: absolute;
-  bottom: -36px;
-}
-
-.secdondary-nav-active {
-  display: initial !important;
-}
 .navbar {
   position: fixed;
   z-index: 99;

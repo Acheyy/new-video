@@ -1,14 +1,16 @@
 <template>
-  
   <div class="upload-wrapper" v-if="accountDetails.isAdmin">
     <input
       type="file"
-      id="video"
-      name="video"
-      accept="video/mp4, .mp4"
+      id="images"
+      name="images"
+      accept="image/jpeg, image/png, video/mp4"
       class="drop-zone margin file-input"
       @change="handleFileSelection($event)"
+      multiple
     />
+
+    name:
     <input
       id="name-input"
       class="input text-input margin input-bordered"
@@ -16,6 +18,7 @@
       :value="nameInput"
       @keyup="handleNameInput($event)"
     />
+    price:
     <input
       id="price-input"
       class="input text-input margin input-bordered"
@@ -23,20 +26,6 @@
       :value="priceInput"
       @keyup="handlePriceInput($event)"
     />
-    Category:
-    <div class="margin">
-      <template v-for="(category, index) in categories" :key="index">
-        <input
-          class="radio radio-sm"
-          type="radio"
-          name="category"
-          :value="category.name"
-          :id="category.name"
-          @click="handleCategorySelect($event, category._id)"
-        />
-        <label :for="category.name">{{ category.name }}</label>
-      </template>
-    </div>
     <div class="margin">
       Tags:
       <template v-for="(tag, index) in tagsData" :key="index">
@@ -71,8 +60,6 @@
     Price:
     {{ priceInput }}
     <br />
-    Category:
-    {{ category }}
     <br />
     Tags:
     {{ tags }}
@@ -94,8 +81,6 @@ const { accountDetails } = storeToRefs(accountInfoStore);
 const files = ref([]);
 let nameInput = ref("");
 let priceInput = ref("");
-let category = ref("");
-let categoryId = ref("");
 let actor = ref("");
 let actorId = ref("");
 let tags = ref([]);
@@ -103,9 +88,21 @@ let tagIds = ref([]);
 
 const handleFileSelection = (event) => {
   let uploadedFiles = event.target.files;
-  files.value = uploadedFiles;
-  nameInput.value = files.value[0].name.split(".").slice(0, -1).join(".");
+  if (uploadedFiles.length) {
+    files.value = [...uploadedFiles];
+  }
 };
+
+function getImageDimensions(file) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      resolve({ width: img.width, height: img.height });
+    };
+    img.src = URL.createObjectURL(file);
+  });
+}
+
 const handleNameInput = (event) => {
   nameInput.value = event.target.value;
   console.log(event.target.value);
@@ -113,10 +110,6 @@ const handleNameInput = (event) => {
 const handlePriceInput = (event) => {
   priceInput.value = event.target.value;
   console.log(event.target.value);
-};
-const handleCategorySelect = (event, ID) => {
-  category.value = event.target.value;
-  categoryId.value = ID;
 };
 const handleActorelect = (event, ID) => {
   actor.value = event.target.value;
@@ -155,52 +148,22 @@ async function captureThumbnail(videoFile, time) {
   });
 }
 
-async function getVideoDuration(videoFile) {
-  return new Promise((resolve) => {
-    const video = document.createElement("video");
-
-    video.addEventListener("loadedmetadata", () => {
-      resolve(video.duration);
-    });
-
-    video.src = URL.createObjectURL(videoFile);
-  });
-}
-
 async function submitVideo() {
   let formData = new FormData();
-  console.log("tagIds.value", tagIds.value);
+
+  for (const file of files.value) {
+    const { width, height } = await getImageDimensions(file);
+    formData.append("images", file, file.name);
+    formData.append("imageWidths", width);
+    formData.append("imageHeights", height);
+  }
+
   formData.append("name", nameInput.value);
   formData.append("price", priceInput.value);
-  formData.append("category", categoryId.value);
   formData.append("tags[]", tagIds.value);
   formData.append("actor", actorId.value);
-  formData.append("video", files.value[0]);
-  console.log(formData.values);
-  // Get video duration
-  const duration = await getVideoDuration(files.value[0]);
-  formData.append("duration", duration);
 
-  // Calculate the times at which to capture the thumbnails based on percentages
-  const captureTimes = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8].map(
-    (percentage) => duration * percentage
-  );
-
-  // Capture thumbnails from the video
-  const thumbnails = await Promise.all(
-    captureTimes.map((time) => captureThumbnail(files.value[0], time))
-  );
-
-  // Append thumbnails to formData
-  thumbnails.forEach((thumbnail, index) => {
-    formData.append(
-      `thumbnail${index + 1}`,
-      thumbnail,
-      `thumbnail${index + 1}.webp`
-    );
-  });
-
-  await $fetch(`https://sexkbj.tv/api/videos`, {
+  await $fetch(`https://sexkbj.tv/api/galleries`, {
     method: "POST",
     body: formData,
     onResponse() {
@@ -242,7 +205,7 @@ const { data: actorsData } = await useFetch(
   width: 500px;
 }
 
-label{
+label {
   margin: 0 8px 0 4px;
   cursor: pointer;
 }

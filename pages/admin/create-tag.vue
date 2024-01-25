@@ -28,7 +28,7 @@ async function submitVideo() {
   v$.value.$validate();
   console.log(v$.value)
   if (!v$.value.$error) {
-    await $fetch(`http://localhost:3030/api/tags`, {
+    await $fetch(`https://sexkbj.tv/api/tags`, {
       method: "POST",
       body: { name: formData.nameInput },
     });
