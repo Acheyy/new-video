@@ -68,14 +68,14 @@ const goToRegister = () => {
   router.push({ path: `/register` });
 };
 useSeoMeta({
-  title: `${$t("login")} - SexKBJ`,
-  twitterTitle: `${$t("login")} - SexKBJ`,
+  title: `${$t("login")} - SKBJ`,
+  twitterTitle: `${$t("login")} - SKBJ`,
   ogTitle: `${$t("login")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 
@@ -90,7 +90,7 @@ setTimeout(() => {
 async function login() {
   v$.value.$validate();
   if (!v$.value.$error) {
-    await $fetch(`https://sexkbj.tv/api/users/login`, {
+    await $fetch(`http://localhost:3030/api/users/login`, {
       method: "POST",
       body: {
         userName: formData.userName,

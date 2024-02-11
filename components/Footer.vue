@@ -8,7 +8,7 @@
             <NuxtLink :to="localePath('/videos')" class="link link-hover">{{
                 $t("allVideos")
             }}</NuxtLink>
-            <NuxtLink :to="localePath('/bj-list')" class="link link-hover">{{
+            <NuxtLink :to="localePath('/all-girls')" class="link link-hover">{{
                 $t("BJlist")
             }}</NuxtLink>
             <NuxtLink :to="localePath('/most-popular')" class="link link-hover">{{
@@ -23,6 +23,15 @@
             <NuxtLink :to="localePath('/special-sales')" class="link link-hover">{{
                 $t("specialSales")
             }}</NuxtLink>
+            <NuxtLink :to="localePath('/galleries')" class="link link-hover">
+                {{ $t("galleries") }}
+            </NuxtLink>
+            <NuxtLink :to="localePath('/categories')" class="link link-hover">
+                {{ $t("categories") }}
+            </NuxtLink>
+            <NuxtLink :to="localePath('/tags')" class="link link-hover">
+                {{ $t("tags") }}
+            </NuxtLink>
             <!-- <a class="link link-hover">Nude</a>
             <a class="link link-hover">Fantrie</a>
             <a class="link link-hover">Twitch</a>

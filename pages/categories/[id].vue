@@ -1,15 +1,15 @@
 <template>
-    <h1 class="text-xl mt-8 mb-2 text-center">{{ $t('specialSales') }}</h1>
+    <h1 class="text-xl mt-8 mb-2 text-center">{{ route.params.id }}</h1>
     <p class="text-center mb-8">{{ $t('totalVideos')}}: {{ videos?.totalVideos ? videos?.totalVideos :"0" }}</p>
     <div class="cards-wrapper ">
       <CardError v-for="index in Array.from({ length: 30 }, (v, k) => k + 1)" :key="index" v-if="error"></CardError>
+  
       <CardLoading
         v-for="index in Array.from({ length: 30 }, (v, k) => k + 1)"
         :key="index"
         v-if="pending"
       ></CardLoading>
-      <Card         v-if="!pending && !error"
- v-for="(video, index) in videos.videos" :data="video"></Card>
+      <Card v-if="!pending && !error" v-for="(video, index) in videos.videos" :data="video"></Card>
     </div>
     <div v-if="pending || error" class="text-center">
       <Pagination
@@ -36,14 +36,25 @@
   
   <script setup>
   import { useI18n } from "vue-i18n";
-  
-  const { t: $t } = useI18n(); 
-  const router = useRouter();
   const route = useRoute();
+
+  const { t: $t } = useI18n(); 
+  useSeoMeta({
+    title: `${route.params.id} videos - SKBJ`,
+    twitterTitle: `${route.params.id} videos - SKBJ`,
+    ogTitle: `${$t("entertainment")}`,
+    description: `${$t("biggest")}`,
+    ogDescription: `${$t("biggest")}`,
+    twitterDescription: `${$t("biggest")}`,
+    ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+    twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+    twitterCard: `summary_large_image`,
+  })
+  const router = useRouter();
   
   const { pending, data: videos, error } = await useLazyFetch(
     () =>
-      `http://localhost:3030/api/videos/special?limit=30&page=${router.currentRoute.value.query.page}`,
+      `http://localhost:3030/api/videos/getVideosByCategory?category=${route.params.id}&limit=30&page=${router.currentRoute.value.query.page}`,
     {
       onResponseError() {
         useNuxtApp().$toast.error($t("loadingError"), {
@@ -54,38 +65,5 @@
       },
     }
   );
-
-  watch(
-  () => route.query,
-  () => {
-    useSeoMeta({
-      title: `${$t("specialSales")} | Page ${route.query.page} - SKBJ`,
-      twitterTitle: `${$t("specialSales")} - SKBJ`,
-      ogTitle: `${$t("specialSales")}`,
-      description: `${$t("bestGirls")}`,
-      ogDescription: `${$t("bestGirls")}`,
-      twitterDescription: `${$t("bestGirls")}`,
-      ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-      twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
-      twitterCard: `summary_large_image`,
-    });
-  }
-);
-useSeoMeta({
-  title: `${$t("specialSales")} ${
-    router.currentRoute.value.query.page
-      ? `Page ` + router.currentRoute.value.query.page
-      : ""
-  } - SKBJ`,
-  twitterTitle: `${$t("specialSales")} - SKBJ`,
-  ogTitle: `${$t("specialSales")}`,
-  description: `${$t("bestGirls")}`,
-  ogDescription: `${$t("bestGirls")}`,
-  twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterCard: `summary_large_image`,
-});
-
   </script>
   

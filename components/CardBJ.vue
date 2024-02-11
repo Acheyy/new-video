@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to="localePath('/bj-list/' + data?.name)" class="card card-compact w-42 sm:w-48 md:w-52 bg-base-100 shadow-md">
+    <NuxtLink :to="localePath('/all-girls/' + data?.name)" class="card card-compact w-42 sm:w-48 md:w-52 bg-base-100 shadow-md">
         <figure class="figure-container">
             <NuxtImg class="img-responsive rounded-lg" :src="data?.thumbnail + '?width=275'" />
         </figure>

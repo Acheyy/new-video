@@ -16,7 +16,7 @@
           <NuxtLink :to="localePath('/videos')" class="btn btn-error m-2">{{
             $t("allVideos")
           }}</NuxtLink>
-          <NuxtLink :to="localePath('/bj-list')" class="btn btn-error m-2">{{
+          <NuxtLink :to="localePath('/all-girls')" class="btn btn-error m-2">{{
             $t("BJlist")
           }}</NuxtLink>
           <NuxtLink
@@ -679,14 +679,14 @@ const recommendedBJ = ref({
 });
 
 useSeoMeta({
-  title: `${$t("error")} - SexKBJ`,
-  twitterTitle: `${$t("error")} - SexKBJ`,
-  ogTitle: `${$t("error")} - SexKBJ`,
+  title: `${$t("error")} - SKBJ`,
+  twitterTitle: `${$t("error")} - SKBJ`,
+  ogTitle: `${$t("error")} - SKBJ`,
   description: `${$t("dive")}`,
   ogDescription: `${$t("dive")}`,
   twitterDescription: `${$t("dive")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 </script>

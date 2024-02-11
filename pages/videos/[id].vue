@@ -235,6 +235,8 @@
     </h1>
     <p>
       <NuxtLink
+      :to="localePath('/tags/' + tag.slug)"
+
         class="btn btn-xs m-1 capitalize text-xs"
         :class="
           tag._id == '643adac05767bb0f8517fec8'
@@ -280,7 +282,7 @@
     <div class="text-center mt-2">
       <NuxtLink
         class="inline-block"
-        :to="localePath('/bj-list/' + video?.actor.name)"
+        :to="localePath('/all-girls/' + video?.actor.name)"
       >
         <CardBJBigger
           :data="video?.actor"
@@ -401,14 +403,12 @@ const {
   pending,
   data: video,
   error,
-} = await useLazyFetch(`https://sexkbj.tv/api/videos/${route.params.id}`, {
+} = await useLazyFetch(`http://localhost:3030/api/videos/${route.params.id}`, {
   credentials: "include",
   headers,
   onResponse(res) {
-    console.log(res);
   },
   onResponseError(err) {
-    console.log(err);
     if ((err.response._data.error = "Forbidden")) {
       accountInfoStore.triggerAccountLogin(false);
     }
@@ -423,7 +423,7 @@ const {
 // }
 
 const { pending: pendingRecommended, data: videosRecommended } =
-  await useLazyFetch(`https://sexkbj.tv/api/videos/random`, {});
+  await useLazyFetch(`http://localhost:3030/api/videos/random`, {});
 
 watch(
   [video, accountDetails],
@@ -445,9 +445,9 @@ watch(
       }
 
       useSeoMeta({
-        title: `${newVideo.name} - SexKBJ`,
-        twitterTitle: `${newVideo.name} - SexKBJ`,
-        ogTitle: `${newVideo.name} - SexKBJ`,
+        title: `${newVideo.name} - SKBJ`,
+        twitterTitle: `${newVideo.name} - SKBJ`,
+        ogTitle: `${newVideo.name} - SKBJ`,
         description: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
           "highQuality"
         )}`,
@@ -484,7 +484,7 @@ const like = async () => {
     likesCount.value--;
   }
 
-  fetch(`https://sexkbj.tv/api/videos/like/${video.value._id}`, {
+  fetch(`http://localhost:3030/api/videos/like/${video.value._id}`, {
     credentials: "include",
   });
 };
@@ -495,7 +495,7 @@ async function purchaseVideo() {
 
   try {
     const response = await $fetch(
-      `https://sexkbj.tv/api/users/purchaseVideo`,
+      `http://localhost:3030/api/users/purchaseVideo`,
       {
         method: "POST",
         body: {
@@ -515,7 +515,7 @@ async function purchaseVideo() {
       });
     } else {
       // If no error, update account info
-      await $fetch(`https://sexkbj.tv/api/users/getInfo`, {
+      await $fetch(`http://localhost:3030/api/users/getInfo`, {
         server: false,
         credentials: "include",
         onResponse(res) {
@@ -539,7 +539,7 @@ async function purchaseVideo() {
         position: "bottom-center",
       }
     );
-    await $fetch(`https://sexkbj.tv/api/users/getInfo`, {
+    await $fetch(`http://localhost:3030/api/users/getInfo`, {
       server: false,
       credentials: "include",
       onResponse(res) {
@@ -584,9 +584,9 @@ async function purchaseVideo() {
 
 if (video.value && video.value.actor) {
   useSeoMeta({
-    title: `${video.value.name} - SexKBJ`,
-    twitterTitle: `${video.value.name} - SexKBJ`,
-    ogTitle: `${video.value.name} - SexKBJ`,
+    title: `${video.value.name} - SKBJ`,
+    twitterTitle: `${video.value.name} - SKBJ`,
+    ogTitle: `${video.value.name} - SKBJ`,
     description: `${video.value.name} - ${video.value.actor.name} - ${$t(
       "highQuality"
     )}`,

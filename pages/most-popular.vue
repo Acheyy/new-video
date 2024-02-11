@@ -27,14 +27,11 @@ import { useI18n } from "vue-i18n";
 const { t: $t } = useI18n();
 const router = useRouter();
 const route = useRoute();
-const controller = new AbortController();
-const signal = controller.signal;
 
 const { pending, data: videos, error } = await useLazyFetch(
   () =>
-    `https://sexkbj.tv/api/videos/most-popular?limit=30&page=${router.currentRoute.value.query.page}`,
+    `http://localhost:3030/api/videos/most-popular?limit=30&page=${router.currentRoute.value.query.page}`,
   {
-    signal,  
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
         autoClose: 5000,
@@ -44,27 +41,20 @@ const { pending, data: videos, error } = await useLazyFetch(
     },
   }
 );
-onBeforeUnmount(() => {
-  controller.abort(); // Abort the fetch request when component unmounts
-});
 
-// If you want to abort when the route changes
-watch(router.currentRoute, () => {
-  controller.abort();
-});
 
 watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("mostPopular")} | Page ${route.query.page} - SexKBJ`,
-      twitterTitle: `${$t("mostPopular")} - SexKBJ`,
+      title: `${$t("mostPopular")} | Page ${route.query.page} - SKBJ`,
+      twitterTitle: `${$t("mostPopular")} - SKBJ`,
       ogTitle: `${$t("mostPopular")}`,
       description: `${$t("bestGirls")}`,
       ogDescription: `${$t("bestGirls")}`,
       twitterDescription: `${$t("bestGirls")}`,
-      ogImage: `https://skbj.b-cdn.net/random/social.png`,
-      twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+      ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+      twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
       twitterCard: `summary_large_image`,
     });
   }
@@ -72,16 +62,16 @@ watch(
 useSeoMeta({
   title: `${$t("mostPopular")} ${
     router.currentRoute.value.query.page
-      ? `Page ` + router.currentRoute.value.query.page
+      ? `| Page ` + router.currentRoute.value.query.page
       : ""
-  } - SexKBJ`,
-  twitterTitle: `${$t("mostPopular")} - SexKBJ`,
+  } - SKBJ`,
+  twitterTitle: `${$t("mostPopular")} - SKBJ`,
   ogTitle: `${$t("mostPopular")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 </script>

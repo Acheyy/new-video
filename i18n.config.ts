@@ -11,7 +11,7 @@ export default defineI18nConfig(() => ({
       dive: "Dive into a collection of content that highlights the best of Korean entertainment. From captivating performances to stunning visuals, we bring you closer to the heart of Korea's dynamic entertainment scene.",
       entertainment: "Your Korean Entertainment Hub",
       admirer:
-        "Whether you're a long-time admirer or new to the world of Korean entertainment, SexKBJ.TV is your go-to destination. Get ready to be charmed and entertained - all in one place!",
+        "Whether you're a long-time admirer or new to the world of Korean entertainment, SKBJ.TV is your go-to destination. Get ready to be charmed and entertained - all in one place!",
       connect: "Connect and Explore",
       join: "Join a community of enthusiasts who share your passion for Korean culture and entertainment. Engage, discuss, and stay updated with the latest trends directly from Korea.",
       allVideos: "All videos",
@@ -78,8 +78,8 @@ export default defineI18nConfig(() => ({
       biggest:
         "Explore the largest and most diverse collection of high-quality Korean entertainment content. Our gallery features an extensive range of exclusive Korean BJ videos and images, showcasing the best in contemporary Korean culture and entertainment",
       bestGirls: "Watch the best Korean BJ Girls online",
-      videosFor: "All Videos Available - Watch more Korean BJ on SexKBJ TV",
-      highQuality: "Best Korean Dance - Watch more Korean BJ on SexKBJ TV",
+      videosFor: "All Videos Available - Watch more Korean BJ on SKBJ TV",
+      highQuality: "Best Korean Dance - Watch more Korean BJ on SKBJ TV",
       seeAlso: "See also",
       recommendedBJ: "Recommended BJ",
       search: "Search",
@@ -89,6 +89,16 @@ export default defineI18nConfig(() => ({
       orderBy: "Order by",
       default: "Default",
       alphabetic: "Alphabetic",
+      weeklyTopBJ: "Weekly Top BJ",
+      minimumPay: "Minimum Crypto payment is 15$ for 90 days",
+      back: "Back",
+      payInfo:
+        "! You need to cover the network fees. If the status is      'partially_paid' it means you didn't send the correct amount to cover      the network fees ! You can always contact us atcontact@skbj.tv for more information",
+      screenShots: "Screenshots",
+      categories: "Categories",
+      tags: "Tags",
+      galleries: "Galleries",
+      totalResults: "Total results",
     },
     kr: {
       welcome: "Bienvenue",
@@ -99,7 +109,7 @@ export default defineI18nConfig(() => ({
       dive: "한국 엔터테인먼트의 최고를 강조하는 콘텐츠 모음에 빠져보세요. 매혹적인 공연부터 놀라운 비주얼까지, 우리는 여러분을 한국의 역동적인 엔터테인먼트 현장의 중심으로 더 가까이 이끕니다.",
       entertainment: "당신의 한국 엔터테인먼트 허브",
       admirer:
-        "한국 엔터테인먼트의 오랜 팬이든, 새로운 팬이든, SexKBJ.TV는 당신의 최적의 목적지입니다. 한 곳에서 매력적이고 즐거운 경험을 준비하세요!",
+        "한국 엔터테인먼트의 오랜 팬이든, 새로운 팬이든, SKBJ.TV는 당신의 최적의 목적지입니다. 한 곳에서 매력적이고 즐거운 경험을 준비하세요!",
       connect: "연결하고 탐험하다",
       join: "한국 문화와 엔터테인먼트에 대한 열정을 공유하는 애호가들의 커뮤니티에 가입하세요. 참여하고 토론하며, 한국에서 직접 오는 최신 트렌드에 대해 계속 업데이트 받으세요.",
       allVideos: "모든 비디오",
@@ -167,9 +177,8 @@ export default defineI18nConfig(() => ({
       biggest:
         "고품질 한국 엔터테인먼트 콘텐츠의 가장 크고 다양한 컬렉션을 탐험하세요. 우리 갤러리는 독점 한국 BJ 비디오 및 이미지의 광범위한 범위를 특징으로 하여, 현대 한국 문화와 엔터테인먼트의 최고를 보여줍니다.",
       bestGirls: "온라인에서 최고의 한국 BJ 여성들을 시청하세요",
-      videosFor:
-        "모든 비디오 이용 가능 - SexKBJ TV에서 더 많은 한국 BJ 시청하기",
-      highQuality: "최고의 한국 댄스 - SexKBJ TV에서 더 많은 한국 BJ 시청하기",
+      videosFor: "모든 비디오 이용 가능 - SKBJ TV에서 더 많은 한국 BJ 시청하기",
+      highQuality: "최고의 한국 댄스 - SKBJ TV에서 더 많은 한국 BJ 시청하기",
       seeAlso: "또한 보기",
       recommendedBJ: "추천 BJ",
       search: "검색",
@@ -179,7 +188,18 @@ export default defineI18nConfig(() => ({
       orderBy: "정렬 기준",
       default: "기본값",
       alphabetic: "알파벳 순",
-    },
+      weeklyTopBJ: "주간 탑 BJ",
+      minimumPay: "최소 암호화폐 결제액은 90일 동안 15달러입니다",
+      back: "뒤로",
+      payInfo:
+        " 네트워크 수수료를 지불해야 합니다. 상태가 'partially_paid'인 경우 네트워크 수수료를 충당하기 위해 충분한 금액을 보내지 않았다는 의미입니다 ! 더 많은 정보를 원하시면 contact@skbj.tv로 언제든지 문의하실 수 있습니다",
+        screenShots: "스크린샷",
+        categories: "카테고리",
+        tags: "태그",
+      galleries: "갤러리",
+      totalResults: "전체 결과",
+
+      },
     cn: {
       welcome: "欢迎",
       home: "首页",
@@ -189,7 +209,7 @@ export default defineI18nConfig(() => ({
       dive: "深入探索一系列凸显韩国娱乐精华的内容。从迷人的表演到惊艳的视觉效果，我们将您带入韩国动态娱乐圈的核心",
       entertainment: "您的韩国娱乐中心",
       admirer:
-        "无论您是长期的韩国娱乐爱好者还是新入门的观众，SexKBJ.tv都是您的首选目的地。准备好在一个地方被迷住并享受娱乐吧！",
+        "无论您是长期的韩国娱乐爱好者还是新入门的观众，SKBJ.tv都是您的首选目的地。准备好在一个地方被迷住并享受娱乐吧！",
       connect: "连接与探索",
       join: "加入一个热爱韩国文化和娱乐的爱好者社区。参与交流，讨论，并直接从韩国了解最新趋势。",
       allVideos: "所有视频",
@@ -254,8 +274,8 @@ export default defineI18nConfig(() => ({
       biggest:
         "探索最大且最多样化的高质量韩国娱乐内容收藏。我们的画廊展示了大量独家韩国BJ视频和图像，展示了当代韩国文化和娱乐的精华。",
       bestGirls: "在线观看最佳韩国BJ女神",
-      videosFor: "所有视频均可用 - 在SexKBJ TV上观看更多韩国BJ",
-      highQuality: "最佳韩国舞蹈 - 在SexKBJ TV上观看更多韩国BJ",
+      videosFor: "所有视频均可用 - SKBJ TV上观看更多韩国BJ",
+      highQuality: "最佳韩国舞蹈 - SKBJ TV上观看更多韩国BJ",
       seeAlso: "另请参阅",
       recommendedBJ: "推荐的BJ",
       search: "搜索",
@@ -265,6 +285,17 @@ export default defineI18nConfig(() => ({
       orderBy: "排序方式",
       default: "默认",
       alphabetic: "字母顺序",
+      weeklyTopBJ: "每周顶级BJ",
+      minimumPay: "最低加密货币支付额为90天15美元",
+      back: "返回",
+      payInfo:
+        "! 您需要支付网络费用。如果状态显示为'partially_paid'，这意味着您发送的金额不足以支付网络费用！如需更多信息，您可以随时通过contact@skbj.tv与我们联系",
+      screenShots: "屏幕截图",
+      categories: "分类",
+      tags: "标签",
+      galleries: "画廊",
+      totalResults: "总结果",
+
     },
   },
 }));

@@ -2,14 +2,14 @@
   <NuxtLink :to="localePath('/videos/' + data.uploadID)" class="card card-compact w-44 sm:w-72 md:w-80 bg-base-100 shadow-md"
     @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @touchstart="onMouseEnter" @touchend="onMouseLeave">
     <figure class="figure-container custom-position">
-      <NuxtImg class="img-responsive" :src="imageSrc" :alt="data.name" :title="data.name"/>
+      <NuxtImg class="img-responsive" :src="imageSrc" :alt="data?.name" :title="data?.name"/>
       <div class="duration badge text-xs">{{ $timeFormat(data.duration) }}</div>
     </figure>
     <div class="card-body">
       <h2 class="card-title text-base">
-        {{ data.name }}
+        {{ data?.name }}
       </h2>
-      <p class="text-accent">{{ data.actor.name }}</p>
+      <p class="text-accent">{{ data?.actor?.name }}</p>
       <p class="text-accent text-xs">
         {{ timeAgo.format(new Date(data.createdAt)) }}
       </p>
@@ -31,7 +31,7 @@
           VIP
         </div>
         <div class="badge badge-outline badge-secondary">
-          {{ data.category.name }}
+          {{ data?.category?.name }}
         </div>
       </div>
     </div>

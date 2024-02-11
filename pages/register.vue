@@ -45,14 +45,14 @@ const accountInfoStore = useAccountInfo();
 const { isAccountLoggedIn } = storeToRefs(accountInfoStore);
 const router = useRouter();
 useSeoMeta({
-  title: `${$t("register")} - SexKBJ`,
-  twitterTitle: `${$t("register")} - SexKBJ`,
+  title: `${$t("register")} - SKBJ`,
+  twitterTitle: `${$t("register")} - SKBJ`,
   ogTitle: `${$t("register")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 
@@ -78,7 +78,7 @@ async function submitVideo() {
 
     v$.value.$validate();
     if (!v$.value.$error) {
-        await $fetch(`https://sexkbj.tv/api/users`, {
+        await $fetch(`http://localhost:3030/api/users`, {
             method: "POST",
             body: {
                 userName: sanitizeduserName.replace(/\s+/g, ""),
@@ -93,7 +93,7 @@ async function submitVideo() {
                         theme: "colored",
                         position: "bottom-center",
                     });
-                    await $fetch(`https://sexkbj.tv/api/users/sendConfirmation`, {
+                    await $fetch(`http://localhost:3030/api/users/sendConfirmation`, {
                         method: "POST",
                         body: { username: sanitizeduserName, to: sanitizedemail },
                     });

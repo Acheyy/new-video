@@ -52,7 +52,7 @@
               >
             </li>
             <li @click="toggleDrawer">
-              <NuxtLink :to="localePath('/bj-list')" class="py-3"
+              <NuxtLink :to="localePath('/all-girls')" class="py-3"
                 ><Icon name="mdi:list-box-outline" size="20" />
                 {{ $t("BJlist") }}</NuxtLink
               >
@@ -77,8 +77,42 @@
             </li>
             <li @click="toggleDrawer">
               <NuxtLink :to="localePath('/galleries')" class="py-3"
-                ><Icon name="mdi:gift" size="20" />
-                Galleries</NuxtLink
+                ><Icon name="mdi:picture" size="20" /> {{ $t("galleries") }}</NuxtLink
+              >
+            </li>
+            <li @click="toggleDrawer">
+              <NuxtLink :to="localePath('/categories')" class="py-3"
+                ><Icon name="mdi:category" size="20" /> {{ $t("categories") }}
+              </NuxtLink>
+            </li>
+            <li @click="toggleDrawer">
+              <NuxtLink :to="localePath('/tags')" class="py-3"
+                ><Icon name="mdi:tag" size="20" /> {{ $t("tags") }}
+              </NuxtLink>
+            </li>
+            <li></li>
+            <li @click="toggleDrawer">
+              <a
+                class="link"
+                href="https://theporndude.com"
+                target="_blank"
+                rel="nofollow"
+                data-v-1e0d9e0b=""
+                ><img src="/images/tpd.ico" data-v-1e0d9e0b="" /> ThePornDude</a
+              >
+            </li>
+            <li @click="toggleDrawer">
+              <a
+                class="link"
+                href="https://discord.gg/gCcUVYAaNE"
+                target="_blank"
+                rel="nofollow"
+                data-v-1e0d9e0b=""
+              >
+                <div class="icon">
+                  <IconsDiscord></IconsDiscord>
+                </div>
+                Discord</a
               >
             </li>
             <li @click="toggleDrawer">
@@ -91,14 +125,14 @@
         </div>
       </div>
     </div>
-    <div class="flex-1">
+    <div class="flex-1 main-logo">
       <NuxtLink
         :to="localePath('/')"
         class="btn btn-ghost text-xl text-secondary"
         :class="{ 'btn-sm': hasScrolled }"
       >
-        SexKBJ</NuxtLink
-      >
+        <img src="/images/skbjLogo.png"
+      /></NuxtLink>
     </div>
     <div class="flex-none">
       <LanguageSelector class="max-sm:!hidden"></LanguageSelector>
@@ -221,7 +255,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -266,7 +299,7 @@ onUnmounted(() => {
 });
 
 if (token.value) {
-  await useLazyFetch(`https://sexkbj.tv/api/users/getInfo`, {
+  await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
     server: false,
     credentials: "include",
 
@@ -276,7 +309,7 @@ if (token.value) {
         accountInfoStore.triggerAccountLogin(true);
       } else {
         accountInfoStore.triggerAccountLogin(false);
-        token.value = null
+        token.value = null;
       }
     },
     onResponseError(err) {
@@ -305,7 +338,17 @@ function logout() {
   border-right: 1px solid transparent;
   border-left: 1px solid transparent;
 }
+.link {
+  text-decoration: none;
+  img {
+    max-width: 24px;
+  }
 
+  .icon {
+    width: 24px;
+    fill: #ffffff;
+  }
+}
 .btn {
   transition: 0.3s ease-in-out;
 }
@@ -313,8 +356,15 @@ function logout() {
 .has-scroll {
   border-bottom: 1px solid #65656530;
   min-height: 46px;
-}
 
+  .main-logo img {
+    max-height: 24px;
+  }
+}
+.main-logo img {
+  max-height: 32px;
+  transition: 0.3s ease-in-out;
+}
 .custom-coin {
   display: flex;
   align-items: center;

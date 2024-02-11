@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       bodyAttrs: {
-        "data-theme": "dark",
+        "data-theme": "dracula",
       },
     },
   },
@@ -21,17 +21,18 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-icon",
     "nuxt-simple-sitemap",
+    "nuxt-swiper",
   ],
   css: ["@/assets/css/_main.scss", "@/assets/css/toast.css"],
   site: {
-    url: "https://sexkbj.tv",
+    url: "http://localhost:3030",
   },
   sitemap: {
     sitemaps: {
       main : {
         includeAppSources: true,
       },
-      'bj-list' : {
+      'all-girls' : {
         sources: [
           '/api/__sitemap__/bjList',
         ]
@@ -133,7 +134,7 @@ export default defineNuxtConfig({
         iso: "zh-CN",
       },
     ],
-    baseUrl: "https://sexkbj.tv",
+    baseUrl: "http://localhost:3030",
     strategy: "prefix_except_default",
     defaultLocale: "en",
   },

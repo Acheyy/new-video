@@ -176,7 +176,7 @@ async function submitVideo() {
   formData.append("tags[]", tagIds.value);
   formData.append("actor", actorId.value);
   formData.append("video", files.value[0]);
-  console.log(formData.values);
+  formData.append("uploadedBy", accountDetails.value._id);
   // Get video duration
   const duration = await getVideoDuration(files.value[0]);
   formData.append("duration", duration);
@@ -200,7 +200,7 @@ async function submitVideo() {
     );
   });
 
-  await $fetch(`https://sexkbj.tv/api/videos`, {
+  await $fetch(`http://localhost:3030/api/videos`, {
     method: "POST",
     body: formData,
     onResponse() {
@@ -215,11 +215,11 @@ async function submitVideo() {
   });
 }
 const { data: categories } = await useFetch(
-  `https://sexkbj.tv/api/categories `
+  `http://localhost:3030/api/categories `
 );
-const { data: tagsData } = await useFetch(`https://sexkbj.tv/api/tags `);
+const { data: tagsData } = await useFetch(`http://localhost:3030/api/tags `);
 const { data: actorsData } = await useFetch(
-  `https://sexkbj.tv/api/actors?limit=9999 `
+  `http://localhost:3030/api/actors?limit=9999 `
 );
 </script>
 
@@ -236,7 +236,7 @@ const { data: actorsData } = await useFetch(
   justify-content: center;
 }
 .margin {
-  margin: 20px 0;
+  margin: 4px 0;
 }
 .text-input {
   width: 500px;

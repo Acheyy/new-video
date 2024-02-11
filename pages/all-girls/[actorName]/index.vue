@@ -57,7 +57,7 @@ const isLiked = ref(false);
 const likesCount = ref(0);
 
 const { pendingActor, data: actor } = await useFetch(
-  `https://sexkbj.tv/api/actors/${route.params.actorName}`,
+  `http://localhost:3030/api/actors/${route.params.actorName}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
@@ -75,7 +75,7 @@ const {
   data: videos,
 } = await useLazyFetch(
   () =>
-    `https://sexkbj.tv/api/videos/videosByActor?actor=${route.params.actorName}&limit=12&orderBy=${videoOrder.value}&page=${router.currentRoute.value.query.page}`,
+    `http://localhost:3030/api/videos/videosByActor?actor=${route.params.actorName}&limit=12&orderBy=${videoOrder.value}&page=${router.currentRoute.value.query.page}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
@@ -136,7 +136,7 @@ const like = async () => {
 
   try {
     const response = await fetch(
-      `https://sexkbj.tv/api/actors/like/${actor.value._id}`,
+      `http://localhost:3030/api/actors/like/${actor.value._id}`,
       {
         credentials: "include",
       }
@@ -180,7 +180,7 @@ useSeoMeta({
     } ${router.currentRoute.value.query.orderBy
       ? `Order by  ` + router.currentRoute.value.query.orderBy
       : ""
-    } - SexKBJ`,
+    } - SKBJ`,
   twitterTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
       router.currentRoute.value.query.orderBy
       ? "|"
@@ -191,7 +191,7 @@ useSeoMeta({
     } ${router.currentRoute.value.query.orderBy
       ? `Order by  ` + router.currentRoute.value.query.orderBy
       : ""
-    } - SexKBJ`,
+    } - SKBJ`,
   ogTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
       router.currentRoute.value.query.orderBy
       ? "|"
@@ -202,7 +202,7 @@ useSeoMeta({
     } ${router.currentRoute.value.query.orderBy
       ? `Order by  ` + router.currentRoute.value.query.orderBy
       : ""
-    } - SexKBJ`,
+    } - SKBJ`,
   description: `${actor.value.name} - ${$t("videosFor")}`,
   ogDescription: `${actor.value.name} - ${$t("videosFor")}`,
   twitterDescription: `${actor.value.name} - ${$t("videosFor")}`,
@@ -225,7 +225,7 @@ watch(
         } ${router.currentRoute.value.query.orderBy
           ? `Order by  ` + router.currentRoute.value.query.orderBy
           : ""
-        } - SexKBJ`,
+        } - SKBJ`,
       twitterTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
           router.currentRoute.value.query.orderBy
           ? "|"
@@ -236,7 +236,7 @@ watch(
         } ${router.currentRoute.value.query.orderBy
           ? `Order by  ` + router.currentRoute.value.query.orderBy
           : ""
-        } - SexKBJ`,
+        } - SKBJ`,
       ogTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
           router.currentRoute.value.query.orderBy
           ? "|"
@@ -247,7 +247,7 @@ watch(
         } ${router.currentRoute.value.query.orderBy
           ? `Order by  ` + router.currentRoute.value.query.orderBy
           : ""
-        } - SexKBJ`,
+        } - SKBJ`,
       description: `${actor.value.name} - ${$t("videosFor")}`,
       ogDescription: `${actor.value.name} - ${$t("videosFor")}`,
       twitterDescription: `${actor.value.name} - ${$t("videosFor")}`,

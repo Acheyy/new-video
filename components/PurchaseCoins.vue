@@ -8,9 +8,9 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product2=mysteryxtrasmall'
+            '&product=mysteryxtrasmall'
           "
-          class="btn btn-secondary my-2 w-96"
+          class="btn btn-secondary my-2 w-80"
           target="_blank"
         >
           50 <IconsCoin></IconsCoin> = 5$
@@ -19,9 +19,9 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product2=mysterysmallbundle'
+            '&product=mysterysmallbundle'
           "
-          class="btn btn-secondary my-2 w-96"
+          class="btn btn-secondary my-2 w-80"
           target="_blank"
         >
           100 <IconsCoin></IconsCoin> = 10$
@@ -30,9 +30,9 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product2=mysterybundle'
+            '&product=mysterybundle'
           "
-          class="btn btn-secondary my-2 w-96 relative"
+          class="btn btn-secondary my-2 w-80 relative"
           target="_blank"
         >
           500 <IconsCoin></IconsCoin> = 45$
@@ -42,9 +42,9 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product2=mysterybigbundle'
+            '&product=mysterybigbundle'
           "
-          class="btn btn-secondary my-2 w-96 relative"
+          class="btn btn-secondary my-2 w-80 relative"
           target="_blank"
         >
           1.000 <IconsCoin></IconsCoin> = 85$
@@ -54,14 +54,22 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product2=mysteryxtrabig'
+            '&product=mysteryxtrabig'
           "
-          class="btn btn-secondary my-2 w-96 relative"
+          class="btn btn-secondary my-2 w-80 relative"
           target="_blank"
         >
           2.000 <IconsCoin></IconsCoin> = 150$
           <div class="discount badge badge-warning">-25%</div>
         </a>
+        <NuxtLink
+          :to="localePath('/crytpto-payment/')"
+          class="btn btn-secondary my-4 w-80 relative"
+          onclick="document.getElementById('my_modal_2').close()"
+        >
+          Buy with CRYPTO
+          <div class="discount badge badge-warning">Up to -40%</div>
+        </NuxtLink>
       </div>
       <div class="modal-action">
         <form method="dialog">
@@ -76,6 +84,8 @@
 <script setup>
 import { useAccountInfo } from "~/store/accountInfo";
 import { storeToRefs } from "pinia";
+const localePath = useLocalePath();
+
 const accountInfoStore = useAccountInfo();
 const { accountDetails } = storeToRefs(accountInfoStore);
 </script>
@@ -87,14 +97,13 @@ img {
   max-height: calc(100% - 4px);
 }
 
-.discount{
-        position: absolute;
-        right: -16px;
-        top: -2px;
-        padding: 4px;
-        border-radius: 14px;
-        transform: rotate(25deg);
-        font-size: 14px;
-    }
-
+.discount {
+  position: absolute;
+  right: -16px;
+  top: -2px;
+  padding: 4px;
+  border-radius: 14px;
+  transform: rotate(25deg);
+  font-size: 14px;
+}
 </style>

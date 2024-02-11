@@ -29,7 +29,7 @@ const route = useRoute();
 
 const { pending, data: videos, error } = await useLazyFetch(
   () =>
-    `https://sexkbj.tv/api/videos/most-liked?limit=30&page=${router.currentRoute.value.query.page}`,
+    `http://localhost:3030/api/videos/most-liked?limit=30&page=${router.currentRoute.value.query.page}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
@@ -44,14 +44,14 @@ watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("mostLiked")} | Page ${route.query.page} - SexKBJ`,
-      twitterTitle: `${$t("mostLiked")} - SexKBJ`,
+      title: `${$t("mostLiked")} | Page ${route.query.page} - SKBJ`,
+      twitterTitle: `${$t("mostLiked")} - SKBJ`,
       ogTitle: `${$t("mostLiked")}`,
       description: `${$t("bestGirls")}`,
       ogDescription: `${$t("bestGirls")}`,
       twitterDescription: `${$t("bestGirls")}`,
-      ogImage: `https://skbj.b-cdn.net/random/social.png`,
-      twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+      ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+      twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
       twitterCard: `summary_large_image`,
     });
   }
@@ -61,14 +61,14 @@ useSeoMeta({
     router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-  } - SexKBJ`,
-  twitterTitle: `${$t("mostLiked")} - SexKBJ`,
+  } - SKBJ`,
+  twitterTitle: `${$t("mostLiked")} - SKBJ`,
   ogTitle: `${$t("mostLiked")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 </script>

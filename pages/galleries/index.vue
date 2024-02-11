@@ -1,6 +1,6 @@
 <template>
-  <h1 class="text-xl mt-8 mb-2 text-center">Galleries</h1>
-  <p class="text-center mb-8">Total results: {{ videos?.totalVideos ? videos?.totalVideos :"0" }}</p>
+  <h1 class="text-xl mt-8 mb-2 text-center">{{ $t("galleries") }}</h1>
+  <p class="text-center mb-8">{{ $t("totalResults") }}: {{ videos?.totalVideos ? videos?.totalVideos :"0" }}</p>
   <div class="cards-wrapper ">
     <CardError v-for="index in Array.from({ length: 30 }, (v, k) => k + 1)" :key="index" v-if="error"></CardError>
 
@@ -39,21 +39,21 @@ import { useI18n } from "vue-i18n";
 
 const { t: $t } = useI18n(); 
 useSeoMeta({
-  title: `All galleries - SexKBJ`,
-  twitterTitle: `All galleries - SexKBJ`,
+  title: `All galleries - SKBJ`,
+  twitterTitle: `All galleries - SKBJ`,
   ogTitle: `${$t("entertainment")}`,
   description: `${$t("biggest")}`,
   ogDescription: `${$t("biggest")}`,
   twitterDescription: `${$t("biggest")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 })
 const router = useRouter();
 
 const { pending, data: videos, error } = await useLazyFetch(
   () =>
-    `https://sexkbj.tv/api/galleries?limit=30&page=${router.currentRoute.value.query.page}`,
+    `http://localhost:3030/api/galleries?limit=30&page=${router.currentRoute.value.query.page}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {

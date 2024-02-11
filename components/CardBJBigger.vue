@@ -5,7 +5,7 @@
         </figure>
         <div class="card-body">
             <h1 class="card-title text-md">
-                {{ data?.name }}
+              {{ data?.name }}
             </h1>
             <p class="text-accent flex items-center">{{ $t('totalFollowers') }}:  {{ likesCount }} <Icon name="mdi:account-supervisor" size="19" class="ml-1"/></p>
 

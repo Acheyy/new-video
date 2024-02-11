@@ -41,7 +41,7 @@
   
   const { pending, data: videos } = await useLazyFetch(
     () =>
-      `https://sexkbj.tv/api/videos/getPurchasedVideos`,
+      `http://localhost:3030/api/videos/getPurchasedVideos`,
     {
         credentials: "include",
     headers,
@@ -56,14 +56,14 @@
     }
   );
   useSeoMeta({
-  title: `${$t("purchased")} - SexKBJ`,
-  twitterTitle: `${$t("purchased")} - SexKBJ`,
+  title: `${$t("purchased")} - SKBJ`,
+  twitterTitle: `${$t("purchased")} - SKBJ`,
   ogTitle: `${$t("purchased")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
   </script>

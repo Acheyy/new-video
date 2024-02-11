@@ -73,14 +73,14 @@ watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("BJlist")} | Page ${route.query.page ? route.query.page : '1'} | Order ${route.query.order ? route.query.order : 'default'} - SexKBJ`,
-      twitterTitle: `${$t("BJlist")} - SexKBJ`,
+      title: `${$t("BJlist")} | Page ${route.query.page ? route.query.page : '1'} | Order ${route.query.order ? route.query.order : 'default'} - SKBJ`,
+      twitterTitle: `${$t("BJlist")} - SKBJ`,
       ogTitle: `${$t("BJlist")}`,
       description: `${$t("bestGirls")}`,
       ogDescription: `${$t("bestGirls")}`,
       twitterDescription: `${$t("bestGirls")}`,
-      ogImage: `https://skbj.b-cdn.net/random/social.png`,
-      twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+      ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+      twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
       twitterCard: `summary_large_image`,
     });
   }
@@ -90,14 +90,14 @@ useSeoMeta({
     router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-  } - SexKBJ`,
-  twitterTitle: `${$t("BJlist")} - SexKBJ`,
+  } - SKBJ`,
+  twitterTitle: `${$t("BJlist")} - SKBJ`,
   ogTitle: `${$t("entertainment")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 
@@ -107,7 +107,7 @@ const {
   error,
 } = await useLazyFetch(
   () =>
-    `https://sexkbj.tv/api/actors?page=${router.currentRoute.value.query.page}&order=${router.currentRoute.value.query.order}`,
+    `http://localhost:3030/api/actors?page=${router.currentRoute.value.query.page}&order=${router.currentRoute.value.query.order}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
