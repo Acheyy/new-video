@@ -1,3 +1,3 @@
 <template>
-  <img src="https://skbj.b-cdn.net/random/coin.png" alt="coin">
+  <img src="https://kbjfree.b-cdn.net/random/coin.png" alt="coin">
 </template>

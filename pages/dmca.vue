@@ -1,10 +1,10 @@
 <template>
     <div class="mt-24 mb-64">
-      <h1>DMCA Policy for SKBJ.tv</h1>
+      <h1>DMCA Policy for KBJFree.tv</h1>
       <h2>1. Introduction</h2>
       <p>
         This policy is designed to inform and guide you on the Digital Millennium
-        Copyright Act ("DMCA") and its application on the skbj.tv website. skbj.tv
+        Copyright Act ("DMCA") and its application on the kbjfree.tv website. kbjfree.tv
         is committed to respecting and protecting the intellectual property rights
         of others, and we expect our users to do the same. If you believe that
         your copyrighted work has been copied or used in a way that constitutes
@@ -15,11 +15,11 @@
       <h2>2. DMCA Notice</h2>
       <p>
         Pursuant to the DMCA, if you believe that your copyrighted material is
-        being infringed on skbj.tv, please send a written notice of the alleged
+        being infringed on kbjfree.tv, please send a written notice of the alleged
         copyright infringement to our designated Copyright Agent at the following
         email address:
       </p>
-      <p>Email: <a href="mailto:contact@skbj.tv">contact@skbj.tv</a></p>
+      <p>Email: <a href="mailto:contact@skbj.tv">contact@kbjfree.tv</a></p>
       <p>Please include the following information in your DMCA notice:</p>
       <ul>
         <li>
@@ -28,7 +28,7 @@
         </li>
         <li>
           b. A description of where the allegedly infringing material is located
-          on skbj.tv, including the specific URLs or other unique identifying
+          on kbjfree.tv, including the specific URLs or other unique identifying
           information.
         </li>
         <li>c. Your name, address, telephone number, and email address.</li>
@@ -44,14 +44,14 @@
 const { t: $t } = useI18n();
 
 useSeoMeta({
-  title: `DMCA - SKBJ`,
-  twitterTitle: `DMCA - SKBJ`,
+  title: `DMCA - KBJFree`,
+  twitterTitle: `DMCA - KBJFree`,
   ogTitle: `DMCA`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 </script>

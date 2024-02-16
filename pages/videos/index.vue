@@ -39,21 +39,21 @@ import { useI18n } from "vue-i18n";
 
 const { t: $t } = useI18n(); 
 useSeoMeta({
-  title: `${$t("allVideos")} - SKBJ`,
-  twitterTitle: `${$t("allVideos")} - SKBJ`,
+  title: `${$t("allVideos")} - KBJFree`,
+  twitterTitle: `${$t("allVideos")} - KBJFree`,
   ogTitle: `${$t("entertainment")}`,
-  description: `${$t("biggest")}`,
+  description: `${$t("biggest")}`, // modify description
   ogDescription: `${$t("biggest")}`,
   twitterDescription: `${$t("biggest")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 })
 const router = useRouter();
 
 const { pending, data: videos, error } = await useLazyFetch(
   () =>
-    `http://localhost:3030/api/videos?limit=30&page=${router.currentRoute.value.query.page}`,
+    `https://kbjfree.tv/api/videos?limit=30&page=${router.currentRoute.value.query.page}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {

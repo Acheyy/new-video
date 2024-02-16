@@ -54,13 +54,13 @@ async function submitVideo() {
   formData.append("name", nameInput.value);
   formData.append("video", files.value[0]);
   console.log(formData.values);
-  await $fetch(`http://localhost:3030/api/actors`, {
+  await $fetch(`https://kbjfree.tv/api/actors`, {
     method: "POST",
     body: formData,
   });
 
 
-  // await $fetch(`http://localhost:3030/api/actors`, {
+  // await $fetch(`https://kbjfree.tv/api/actors`, {
   //   method: "POST",
   //   body: { name: nameInput.value, thumbnail: thumbnailInput.value },
   // });

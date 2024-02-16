@@ -40,21 +40,21 @@
 
   const { t: $t } = useI18n(); 
   useSeoMeta({
-    title: `${route.params.id} videos - SKBJ`,
-    twitterTitle: `${route.params.id} videos - SKBJ`,
+    title: `${route.params.id} videos - KBJFree`,
+    twitterTitle: `${route.params.id} videos - KBJFree`,
     ogTitle: `${$t("entertainment")}`,
     description: `${$t("biggest")}`,
     ogDescription: `${$t("biggest")}`,
     twitterDescription: `${$t("biggest")}`,
-    ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-    twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+    ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+    twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
     twitterCard: `summary_large_image`,
   })
   const router = useRouter();
   
   const { pending, data: videos, error } = await useLazyFetch(
     () =>
-      `http://localhost:3030/api/videos/getVideosByCategory?category=${route.params.id}&limit=30&page=${router.currentRoute.value.query.page}`,
+      `https://kbjfree.tv/api/videos/getVideosByCategory?category=${route.params.id}&limit=30&page=${router.currentRoute.value.query.page}`,
     {
       onResponseError() {
         useNuxtApp().$toast.error($t("loadingError"), {

@@ -3,7 +3,7 @@
     <div class="hero-content text-center">
       <div>
         <h1 class="text-5xl font-bold">
-          {{ $t("welcomeTo") }} <span class="text-secondary">SKBJ.TV</span>
+          {{ $t("welcomeTo") }} <span class="text-secondary">KBJFree.TV</span>
         </h1>
         <p class="pt-4">
           🎬 <strong>{{ $t("unmatched") }}</strong

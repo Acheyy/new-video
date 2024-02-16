@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   ],
   css: ["@/assets/css/_main.scss", "@/assets/css/toast.css"],
   site: {
-    url: "http://localhost:3030",
+    url: "https://kbjfree.tv",
   },
   sitemap: {
     sitemaps: {
@@ -134,7 +134,7 @@ export default defineNuxtConfig({
         iso: "zh-CN",
       },
     ],
-    baseUrl: "http://localhost:3030",
+    baseUrl: "https://kbjfree.tv",
     strategy: "prefix_except_default",
     defaultLocale: "en",
   },

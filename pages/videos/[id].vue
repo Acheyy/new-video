@@ -403,7 +403,7 @@ const {
   pending,
   data: video,
   error,
-} = await useLazyFetch(`http://localhost:3030/api/videos/${route.params.id}`, {
+} = await useLazyFetch(`https://kbjfree.tv/api/videos/${route.params.id}`, {
   credentials: "include",
   headers,
   onResponse(res) {
@@ -423,7 +423,7 @@ const {
 // }
 
 const { pending: pendingRecommended, data: videosRecommended } =
-  await useLazyFetch(`http://localhost:3030/api/videos/random`, {});
+  await useLazyFetch(`https://kbjfree.tv/api/videos/random`, {});
 
 watch(
   [video, accountDetails],
@@ -445,9 +445,9 @@ watch(
       }
 
       useSeoMeta({
-        title: `${newVideo.name} - SKBJ`,
-        twitterTitle: `${newVideo.name} - SKBJ`,
-        ogTitle: `${newVideo.name} - SKBJ`,
+        title: `${newVideo.name} - KBJFree`,
+        twitterTitle: `${newVideo.name} - KBJFree`,
+        ogTitle: `${newVideo.name} - KBJFree`,
         description: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
           "highQuality"
         )}`,
@@ -484,7 +484,7 @@ const like = async () => {
     likesCount.value--;
   }
 
-  fetch(`http://localhost:3030/api/videos/like/${video.value._id}`, {
+  fetch(`https://kbjfree.tv/api/videos/like/${video.value._id}`, {
     credentials: "include",
   });
 };
@@ -495,7 +495,7 @@ async function purchaseVideo() {
 
   try {
     const response = await $fetch(
-      `http://localhost:3030/api/users/purchaseVideo`,
+      `https://kbjfree.tv/api/users/purchaseVideo`,
       {
         method: "POST",
         body: {
@@ -515,7 +515,7 @@ async function purchaseVideo() {
       });
     } else {
       // If no error, update account info
-      await $fetch(`http://localhost:3030/api/users/getInfo`, {
+      await $fetch(`https://kbjfree.tv/api/users/getInfo`, {
         server: false,
         credentials: "include",
         onResponse(res) {
@@ -539,7 +539,7 @@ async function purchaseVideo() {
         position: "bottom-center",
       }
     );
-    await $fetch(`http://localhost:3030/api/users/getInfo`, {
+    await $fetch(`https://kbjfree.tv/api/users/getInfo`, {
       server: false,
       credentials: "include",
       onResponse(res) {
@@ -584,9 +584,9 @@ async function purchaseVideo() {
 
 if (video.value && video.value.actor) {
   useSeoMeta({
-    title: `${video.value.name} - SKBJ`,
-    twitterTitle: `${video.value.name} - SKBJ`,
-    ogTitle: `${video.value.name} - SKBJ`,
+    title: `${video.value.name} - KBJFree`,
+    twitterTitle: `${video.value.name} - KBJFree`,
+    ogTitle: `${video.value.name} - KBJFree`,
     description: `${video.value.name} - ${video.value.actor.name} - ${$t(
       "highQuality"
     )}`,

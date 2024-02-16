@@ -73,14 +73,14 @@ watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("BJlist")} | Page ${route.query.page ? route.query.page : '1'} | Order ${route.query.order ? route.query.order : 'default'} - SKBJ`,
-      twitterTitle: `${$t("BJlist")} - SKBJ`,
+      title: `${$t("BJlist")} | Page ${route.query.page ? route.query.page : '1'} | Order ${route.query.order ? route.query.order : 'default'} - KBJfree`,
+      twitterTitle: `${$t("BJlist")} - KBJfree`,
       ogTitle: `${$t("BJlist")}`,
       description: `${$t("bestGirls")}`,
       ogDescription: `${$t("bestGirls")}`,
       twitterDescription: `${$t("bestGirls")}`,
-      ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-      twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+      ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+      twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
       twitterCard: `summary_large_image`,
     });
   }
@@ -90,14 +90,14 @@ useSeoMeta({
     router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-  } - SKBJ`,
-  twitterTitle: `${$t("BJlist")} - SKBJ`,
+  } - KBJFree`,
+  twitterTitle: `${$t("BJlist")} - KBJFree`,
   ogTitle: `${$t("entertainment")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 
@@ -107,7 +107,7 @@ const {
   error,
 } = await useLazyFetch(
   () =>
-    `http://localhost:3030/api/actors?page=${router.currentRoute.value.query.page}&order=${router.currentRoute.value.query.order}`,
+    `https://kbjfree.tv/api/actors?page=${router.currentRoute.value.query.page}&order=${router.currentRoute.value.query.order}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {

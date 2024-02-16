@@ -68,14 +68,14 @@ const goToRegister = () => {
   router.push({ path: `/register` });
 };
 useSeoMeta({
-  title: `${$t("login")} - SKBJ`,
-  twitterTitle: `${$t("login")} - SKBJ`,
+  title: `${$t("login")} - KBJFree`,
+  twitterTitle: `${$t("login")} - KBJFree`,
   ogTitle: `${$t("login")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 
@@ -90,7 +90,7 @@ setTimeout(() => {
 async function login() {
   v$.value.$validate();
   if (!v$.value.$error) {
-    await $fetch(`http://localhost:3030/api/users/login`, {
+    await $fetch(`https://kbjfree.tv/api/users/login`, {
       method: "POST",
       body: {
         userName: formData.userName,

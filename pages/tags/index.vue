@@ -17,15 +17,15 @@ const { t: $t } = useI18n();
 
 const localePath = useLocalePath();
 useSeoMeta({
-  title: `Tags - SKBJ`,
-  twitterTitle: `Tags - SKBJ`,
+  title: `Tags - KBJFree`,
+  twitterTitle: `Tags - KBJFree`,
   ogTitle: `${$t("entertainment")}`,
   description: `${$t("biggest")}`,
   ogDescription: `${$t("biggest")}`,
   twitterDescription: `${$t("biggest")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
-const { data: tagsData } = await useFetch(`http://localhost:3030/api/tags `);
+const { data: tagsData } = await useFetch(`https://kbjfree.tv/api/tags `);
 </script>

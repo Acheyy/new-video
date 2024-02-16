@@ -72,7 +72,7 @@ const router = useRouter();
 const headers = useRequestHeaders(["cookie"]);
 
 const { pending, data: videosHistory } = await useLazyFetch(
-    () => `http://localhost:3030/api/users/getUserHistory`,
+    () => `https://kbjfree.tv/api/users/getUserHistory`,
     {
         onResponseError() {
             useNuxtApp().$toast.error($t("loadingError"), {
@@ -87,7 +87,7 @@ const { pending, data: videosHistory } = await useLazyFetch(
 );
 const { pending: pendingLiked, data: videosLiked } = await useLazyFetch(
     () =>
-        `http://localhost:3030/api/users/getUserLiked?page=${router.currentRoute.value.query.page}`,
+        `https://kbjfree.tv/api/users/getUserLiked?page=${router.currentRoute.value.query.page}`,
     {
         onResponseError() {
             useNuxtApp().$toast.error($t("loadingError"), {
@@ -102,14 +102,14 @@ const { pending: pendingLiked, data: videosLiked } = await useLazyFetch(
 );
 
 useSeoMeta({
-  title: `${$t("profile")} - SKBJ`,
-  twitterTitle: `${$t("profile")} - SKBJ`,
+  title: `${$t("profile")} - KBJFree`,
+  twitterTitle: `${$t("profile")} - KBJFree`,
   ogTitle: `${$t("profile")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 

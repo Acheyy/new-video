@@ -49,7 +49,7 @@ const recommendedBJ = ref({
   actors: [
     {
       name: "woohankyung",
-      thumbnail: "https://skbj.b-cdn.net/actors/woohankyung.webp",
+      thumbnail: "https://kbjfree.b-cdn.net/actors/woohankyung.webp",
       totalVideos: 50,
       slug: "woohankyung",
       likes: [
@@ -93,7 +93,7 @@ const recommendedBJ = ref({
     },
     {
       name: "030b1004",
-      thumbnail: "https://skbj.b-cdn.net/actors/030b1004.webp",
+      thumbnail: "https://kbjfree.b-cdn.net/actors/030b1004.webp",
       totalVideos: 79,
       slug: "030b1004",
       likes: [
@@ -163,7 +163,7 @@ const recommendedBJ = ref({
     },
     {
       name: "golaniyule0",
-      thumbnail: "https://skbj.b-cdn.net/actors/golaniyule0.webp",
+      thumbnail: "https://kbjfree.b-cdn.net/actors/golaniyule0.webp",
       totalVideos: 50,
       slug: "golaniyule0",
       likes: [
@@ -357,7 +357,7 @@ const recommendedBJ = ref({
     },
     {
       name: "m0m099",
-      thumbnail: "https://skbj.b-cdn.net/actors/m0m099.webp",
+      thumbnail: "https://kbjfree.b-cdn.net/actors/m0m099.webp",
       totalVideos: 50,
       slug: "m0m099",
       likes: [
@@ -524,7 +524,7 @@ const recommendedBJ = ref({
     },
     {
       name: "yepyeppp",
-      thumbnail: "https://skbj.b-cdn.net/actors/yepyeppp.webp",
+      thumbnail: "https://kbjfree.b-cdn.net/actors/yepyeppp.webp",
       totalVideos: 50,
       slug: "yepyeppp",
       likes: [
@@ -607,7 +607,7 @@ const recommendedBJ = ref({
     },
     {
       name: "yudiiimaru",
-      thumbnail: "https://skbj.b-cdn.net/actors/yudiiimaru.webp",
+      thumbnail: "https://kbjfree.b-cdn.net/actors/yudiiimaru.webp",
       totalVideos: 50,
       slug: "yudiiimaru",
       likes: [
@@ -679,14 +679,14 @@ const recommendedBJ = ref({
 });
 
 useSeoMeta({
-  title: `${$t("error")} - SKBJ`,
-  twitterTitle: `${$t("error")} - SKBJ`,
-  ogTitle: `${$t("error")} - SKBJ`,
+  title: `${$t("error")} - KBJFree`,
+  twitterTitle: `${$t("error")} - KBJFree`,
+  ogTitle: `${$t("error")} - KBJFree`,
   description: `${$t("dive")}`,
   ogDescription: `${$t("dive")}`,
   twitterDescription: `${$t("dive")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
 </script>

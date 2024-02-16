@@ -91,16 +91,16 @@
               </NuxtLink>
             </li>
             <li></li>
-            <li @click="toggleDrawer">
-              <a
-                class="link"
-                href="https://theporndude.com"
-                target="_blank"
-                rel="nofollow"
-                data-v-1e0d9e0b=""
-                ><img src="/images/tpd.ico" data-v-1e0d9e0b="" /> ThePornDude</a
-              >
-            </li>
+<!--            <li @click="toggleDrawer">-->
+<!--              <a-->
+<!--                class="link"-->
+<!--                href="https://theporndude.com"-->
+<!--                target="_blank"-->
+<!--                rel="nofollow"-->
+<!--                data-v-1e0d9e0b=""-->
+<!--                ><img src="/images/tpd.ico" data-v-1e0d9e0b="" /> ThePornDude</a-->
+<!--              >-->
+<!--            </li>-->
             <li @click="toggleDrawer">
               <a
                 class="link"
@@ -131,8 +131,8 @@
         class="btn btn-ghost text-xl text-secondary"
         :class="{ 'btn-sm': hasScrolled }"
       >
-        <img src="/images/skbjLogo.png"
-      /></NuxtLink>
+<!--        <img src="/images/kbjfreeLogo.png"-->/>
+      </NuxtLink> <!-- to do -->
     </div>
     <div class="flex-none">
       <LanguageSelector class="max-sm:!hidden"></LanguageSelector>
@@ -299,7 +299,7 @@ onUnmounted(() => {
 });
 
 if (token.value) {
-  await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
+  await useLazyFetch(`https://kbjfree.tv/api/users/getInfo`, {
     server: false,
     credentials: "include",
 

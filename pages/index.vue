@@ -19,18 +19,18 @@ import { useI18n } from "vue-i18n";
 
 const { t: $t } = useI18n(); // This is how you destructure the $t function
 useSeoMeta({
-  title: `${$t("home")} - SKBJ`,
-  twitterTitle: `${$t("home")} - SKBJ`,
+  title: `${$t("home")} - KBJFree`,
+  twitterTitle: `${$t("home")} - KBJFree`,
   ogTitle: `${$t("entertainment")}`,
   description: `${$t("dive")}`,
   ogDescription: `${$t("dive")}`,
   twitterDescription: `${$t("dive")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://kbjfree.b-cdn.net/random/social2.png`,
+  twitterImage: `https://kbjfree.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 })
 
-const { pending, data: videos, error } = await useLazyFetch(`http://localhost:3030/api/videos?limit=12`, {
+const { pending, data: videos, error } = await useLazyFetch(`https://kbjfree.tv/api/videos?limit=12`, {
   onResponseError() {
     useNuxtApp().$toast.error($t("loadingError"), {
             autoClose: 10000,
