@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="localePath('/videos/' + data.uploadID)" class="card card-compact w-44 sm:w-72 md:w-80 bg-base-100 shadow-md"
+  <NuxtLink :to="localePath('/videos/' + data.slug)" class="card card-compact w-44 sm:w-72 md:w-80 bg-base-100 shadow-md"
     @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @touchstart="onMouseEnter" @touchend="onMouseLeave">
     <figure class="figure-container custom-position">
       <NuxtImg class="img-responsive" :src="imageSrc" :alt="data?.name" :title="data?.name"/>
@@ -27,7 +27,7 @@
         <div class="badge badge-outline badge-warning custom-coin" v-if="data.cost > 0">
           {{ data.cost }} <IconsCoin></IconsCoin>
         </div>
-        <div class="badge badge-outline badge-warning" v-if="data.tags.includes('643adac05767bb0f8517fec8')">
+        <div class="badge badge-outline badge-warning" v-if="data.tags.includes('65da37ede8062bc3a1860d11')">
           VIP
         </div>
         <div class="badge badge-outline badge-secondary">
@@ -54,7 +54,7 @@ const imageSrc = ref(data?.thumbnail);
 
 const onMouseEnter = () => {
   if(data.createdAt > "2023-07-26T00:19:34.582Z") {
-    imageSrc.value = `https://vz-faaf5b6e-df7.b-cdn.net/${data.uploadID}/preview.webp`;
+    imageSrc.value = `https://vz-fefada94-625.b-cdn.net/${data.uploadID}/preview.webp`;
   }
 };
 

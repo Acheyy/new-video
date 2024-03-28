@@ -4,29 +4,29 @@
       <h3 class="font-bold text-lg">{{ $t("upgradeToVip") }}!</h3>
       <!-- First div, shown initially -->
       <div v-if="currentView === 0">
-        <a
-          :href="
-            'https://securekeybj.tech/send-checkout?customerId=' +
-            accountDetails._id +
-            '&product=plugingpt'
-          "
-          target="_blank"
-          class="btn btn-primary mt-4 mx-auto w-64"
-          >STRIPE (30 days) 5$</a
-        >
+<!--        <a-->
+<!--          :href="-->
+<!--            'https://securekeybj.tech/send-checkout?customerId=' +-->
+<!--            accountDetails._id +-->
+<!--            '&product=plugingpt'-->
+<!--          "-->
+<!--          target="_blank"-->
+<!--          class="btn btn-primary mt-4 mx-auto w-64"-->
+<!--          >STRIPE (30 days) 5$</a-->
+<!--        >-->
         <button
-        @click="handleVIPSelection(180, 25)"
+        @click="handleVIPSelection(180, 20)"
           class="btn btn-primary mt-4 mx-auto w-64 relative"
         >
-          CRYPTO (180 days) 25$
-          <div class="discount badge badge-warning">-5$</div>
+          CRYPTO (180 days) 20$
+<!--          <div class="discount badge badge-warning">-5$</div>-->
         </button>
         <button
-        @click="handleVIPSelection(360, 45)"
+        @click="handleVIPSelection(360, 35)"
           class="btn btn-primary mt-4 mx-auto w-64 relative"
         >
-          CRYPTO (360 days) 45$
-          <div class="discount badge badge-warning">-15$</div>
+          CRYPTO (360 days) 35$
+          <div class="discount badge badge-warning">-5$</div>
         </button>
       </div>
       <!-- Second div, shown when currentView is 1 -->
@@ -81,7 +81,7 @@
         <p v-if="paymentDetails">
           You need to cover the network fees. If the status is 'partially_paid'
           it means you didn't send the correct amount to cover the network fees! 
-          You can always contact us at contact@skbj.tv for help or more information
+          You can always contact us at contact@kbjfree.tv for help or more information
         </p>
         <p v-if="paymentDetails">
           <img
@@ -134,7 +134,7 @@ const handleVIPSelection = (daysAmount, usdAmount) => {
 
 const handleBitcoinPayment = async (currency) => {
   currentView.value = 2; // Move to the third div
-  const { data, error } = await useFetch("https://kbjfree.tv/api/payments", {
+  const { data, error } = await useFetch("http://localhost:3030/api/payments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -159,7 +159,7 @@ const handleBitcoinPayment = async (currency) => {
 const startPolling = (paymentId) => {
   pollingTimer = setInterval(async () => {
     const { data: statusData, error: statusError } = await useFetch(
-      `https://kbjfree.tv/api/payments/${paymentId}`,
+      `http://localhost:3030/api/payments/${paymentId}`,
       {
         method: "GET",
       }

@@ -30,7 +30,7 @@ useSeoMeta({
   twitterCard: `summary_large_image`,
 })
 
-const { pending, data: videos, error } = await useLazyFetch(`https://kbjfree.tv/api/videos?limit=12`, {
+const { pending, data: videos, error } = await useLazyFetch(`http://localhost:3030/api/videos?limit=12`, {
   onResponseError() {
     useNuxtApp().$toast.error($t("loadingError"), {
             autoClose: 10000,

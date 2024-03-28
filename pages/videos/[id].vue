@@ -131,7 +131,7 @@
       <iframe
         id="custom-iframe"
         :src="
-          'https://iframe.mediadelivery.net/embed/141502/' + route.params.id
+          'https://iframe.mediadelivery.net/embed/203654/' + video.uploadID
         "
         loading="lazy"
         class="main-player absolute bg-base-200"
@@ -143,7 +143,7 @@
       ></iframe>
       <iframe
         id="custom-iframe"
-        :src="'https://sbhight.com/e/' + route.params.id + '.html'"
+        :src="'https://sbhight.com/e/' + video.uploadID + '.html'"
         loading="lazy"
         class="main-player absolute bg-base-200"
         :class="{ 'is-loaded': iframeLoaded }"
@@ -176,7 +176,7 @@
       ></iframe>
       <PremiumPlayer
         v-if="sourceVIP"
-        :source="'https://skbjvid.b-cdn.net/videos/' + video.fileName"
+        :source="'https://kbjfree.b-cdn.net/videos/' + video.fileName"
       ></PremiumPlayer>
     </div>
     <div class="sources justify-between">
@@ -239,7 +239,7 @@
 
         class="btn btn-xs m-1 capitalize text-xs"
         :class="
-          tag._id == '643adac05767bb0f8517fec8'
+          tag._id == '65da37ede8062bc3a1860d11'
             ? 'btn-warning'
             : 'btn-secondary'
         "
@@ -403,7 +403,7 @@ const {
   pending,
   data: video,
   error,
-} = await useLazyFetch(`https://kbjfree.tv/api/videos/${route.params.id}`, {
+} = await useLazyFetch(`http://localhost:3030/api/videos/${route.params.id}`, {
   credentials: "include",
   headers,
   onResponse(res) {
@@ -423,7 +423,7 @@ const {
 // }
 
 const { pending: pendingRecommended, data: videosRecommended } =
-  await useLazyFetch(`https://kbjfree.tv/api/videos/random`, {});
+  await useLazyFetch(`http://localhost:3030/api/videos/random`, {});
 
 watch(
   [video, accountDetails],
@@ -484,7 +484,7 @@ const like = async () => {
     likesCount.value--;
   }
 
-  fetch(`https://kbjfree.tv/api/videos/like/${video.value._id}`, {
+  fetch(`http://localhost:3030/api/videos/like/${video.value._id}`, {
     credentials: "include",
   });
 };
@@ -495,7 +495,7 @@ async function purchaseVideo() {
 
   try {
     const response = await $fetch(
-      `https://kbjfree.tv/api/users/purchaseVideo`,
+      `http://localhost:3030/api/users/purchaseVideo`,
       {
         method: "POST",
         body: {
@@ -515,7 +515,7 @@ async function purchaseVideo() {
       });
     } else {
       // If no error, update account info
-      await $fetch(`https://kbjfree.tv/api/users/getInfo`, {
+      await $fetch(`http://localhost:3030/api/users/getInfo`, {
         server: false,
         credentials: "include",
         onResponse(res) {
@@ -539,7 +539,7 @@ async function purchaseVideo() {
         position: "bottom-center",
       }
     );
-    await $fetch(`https://kbjfree.tv/api/users/getInfo`, {
+    await $fetch(`http://localhost:3030/api/users/getInfo`, {
       server: false,
       credentials: "include",
       onResponse(res) {

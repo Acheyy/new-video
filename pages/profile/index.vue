@@ -11,15 +11,15 @@
                 <div>
                     {{ $t("coins") }}: <strong>{{ accountDetails.credit }}</strong>
                 </div>
-                <div>
-                    {{ $t("isAccountVIP") }}:
-                    <strong>{{ accountDetails.isUserPremium }}</strong>
-                </div>
-                <!-- <UpgradeToPremiumButton v-if="!accountDetails.isUserPremium"></UpgradeToPremiumButton> -->
-                <div class="mt-2" >
-                    {{$t("vipExpires")}}:
-                    <strong>{{ timeAgo.format(new Date(accountDetails?.premiumExpiry)) }}</strong>
-                </div>
+<!--                <div>-->
+<!--                    {{ $t("isAccountVIP") }}:-->
+<!--                    <strong>{{ accountDetails.isUserPremium }}</strong>-->
+<!--                </div>-->
+                 <UpgradeToPremiumButton v-if="!accountDetails.isUserPremium"></UpgradeToPremiumButton>
+<!--                <div class="mt-2" >-->
+<!--                    {{$t("vipExpires")}}:-->
+<!--                    <strong>{{ timeAgo.format(new Date(accountDetails?.premiumExpiry)) }}</strong>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -72,7 +72,7 @@ const router = useRouter();
 const headers = useRequestHeaders(["cookie"]);
 
 const { pending, data: videosHistory } = await useLazyFetch(
-    () => `https://kbjfree.tv/api/users/getUserHistory`,
+    () => `http://localhost:3030/api/users/getUserHistory`,
     {
         onResponseError() {
             useNuxtApp().$toast.error($t("loadingError"), {
@@ -87,7 +87,7 @@ const { pending, data: videosHistory } = await useLazyFetch(
 );
 const { pending: pendingLiked, data: videosLiked } = await useLazyFetch(
     () =>
-        `https://kbjfree.tv/api/users/getUserLiked?page=${router.currentRoute.value.query.page}`,
+        `http://localhost:3030/api/users/getUserLiked?page=${router.currentRoute.value.query.page}`,
     {
         onResponseError() {
             useNuxtApp().$toast.error($t("loadingError"), {

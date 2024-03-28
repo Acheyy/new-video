@@ -26,7 +26,7 @@
         <div class="badge badge-outline badge-warning custom-coin" v-if="data.cost > 0">
           {{ data.cost }} <IconsCoin></IconsCoin>
         </div>
-        <div class="badge badge-outline badge-warning" v-if="data.tags.includes('643adac05767bb0f8517fec8')">
+        <div class="badge badge-outline badge-warning" v-if="data.tags.includes('65da37ede8062bc3a1860d11')">
           VIP
         </div>
       </div>

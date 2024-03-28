@@ -104,7 +104,7 @@
             <li @click="toggleDrawer">
               <a
                 class="link"
-                href="https://discord.gg/gCcUVYAaNE"
+                href="https://discord.gg/tXYHRqQmne"
                 target="_blank"
                 rel="nofollow"
                 data-v-1e0d9e0b=""
@@ -131,11 +131,11 @@
         class="btn btn-ghost text-xl text-secondary"
         :class="{ 'btn-sm': hasScrolled }"
       >
-<!--        <img src="/images/kbjfreeLogo.png"-->/>
+<!--        <img src="/images/kbjfreeLogo.png"-->KBJFree
       </NuxtLink> <!-- to do -->
     </div>
     <div class="flex-none">
-      <LanguageSelector class="max-sm:!hidden"></LanguageSelector>
+      <LanguageSelector class=""></LanguageSelector>
 
       <NuxtLink :to="localePath('/search')" class="btn btn-sm btn-ghost ml-1">
         <Icon name="mdi:magnify" size="20" />
@@ -212,15 +212,15 @@
               >
                 {{ $t("upgradeToVip") }}!
               </div>
-              <div
-                class="btn custom-coin mt-2"
-                onclick="my_modal_2.showModal()"
-              >
-                {{ $t("availableCoins") }}:<strong>{{
-                  accountDetails.credit
-                }}</strong>
-                <IconsCoin></IconsCoin>
-              </div>
+<!--              <div-->
+<!--                class="btn custom-coin mt-2"-->
+<!--                onclick="my_modal_2.showModal()"-->
+<!--              >-->
+<!--                {{ $t("availableCoins") }}:<strong>{{-->
+<!--                  accountDetails.credit-->
+<!--                }}</strong>-->
+<!--                <IconsCoin></IconsCoin>-->
+<!--              </div>-->
 
               <!-- Sidebar content here -->
               <li @click="toggleDrawer">
@@ -230,12 +230,12 @@
                 >
               </li>
 
-              <li @click="toggleDrawer">
-                <NuxtLink :to="localePath('/profile/purchased')" class="py-3">
-                  <Icon name="mdi:lock-open" size="20" />
-                  {{ $t("purchased") }}</NuxtLink
-                >
-              </li>
+<!--              <li @click="toggleDrawer">-->
+<!--                <NuxtLink :to="localePath('/profile/purchased')" class="py-3">-->
+<!--                  <Icon name="mdi:lock-open" size="20" />-->
+<!--                  {{ $t("purchased") }}</NuxtLink-->
+<!--                >-->
+<!--              </li>-->
 
               <li @click="toggleDrawer">
                 <NuxtLink :to="localePath('/profile/following')" class="py-3">
@@ -299,7 +299,7 @@ onUnmounted(() => {
 });
 
 if (token.value) {
-  await useLazyFetch(`https://kbjfree.tv/api/users/getInfo`, {
+  await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
     server: false,
     credentials: "include",
 

@@ -20,12 +20,12 @@
         </nav>
         <nav class="mx-auto">
             <header class="footer-title">{{$t("more")}}</header>
-            <NuxtLink :to="localePath('/special-sales')" class="link link-hover">{{
-                $t("specialSales")
-            }}</NuxtLink>
-            <NuxtLink :to="localePath('/galleries')" class="link link-hover">
-                {{ $t("galleries") }}
-            </NuxtLink>
+<!--            <NuxtLink :to="localePath('/special-sales')" class="link link-hover">{{-->
+<!--                $t("specialSales")-->
+<!--            }}</NuxtLink>-->
+<!--            <NuxtLink :to="localePath('/galleries')" class="link link-hover">-->
+<!--                {{ $t("galleries") }}-->
+<!--            </NuxtLink>-->
             <NuxtLink :to="localePath('/categories')" class="link link-hover">
                 {{ $t("categories") }}
             </NuxtLink>
@@ -42,9 +42,9 @@
             <NuxtLink :to="localePath('/contact')" class="link link-hover">{{
                 $t("contact")
             }}</NuxtLink>            
-            <NuxtLink :to="localePath('/dmca')" class="link link-hover">
-                DMCA
-            </NuxtLink>            
+<!--            <NuxtLink :to="localePath('/dmca')" class="link link-hover">-->
+<!--                DMCA-->
+<!--            </NuxtLink>            -->
         </nav>
     </footer>
 </template>

@@ -43,7 +43,7 @@
   
   const { pending, data: videos, error } = await useLazyFetch(
     () =>
-      `https://kbjfree.tv/api/videos/special?limit=30&page=${router.currentRoute.value.query.page}`,
+      `http://localhost:3030/api/videos/special?limit=30&page=${router.currentRoute.value.query.page}`,
     {
       onResponseError() {
         useNuxtApp().$toast.error($t("loadingError"), {

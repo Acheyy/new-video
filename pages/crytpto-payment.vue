@@ -70,7 +70,7 @@
             You need to cover the network fees. If the status is
             'partially_paid' it means you didn't send the correct amount to
             cover the network fees ! You can always contact us at
-            contact@skbj.tv for more information
+            contact@kbjfree.tv for more information
           </p>
           <p v-if="paymentDetails">
             <img
@@ -124,7 +124,7 @@ const handleAmountSelection = (coinsAmount, usdAmount) => {
 
 const handleBitcoinPayment = async (currency, coinsAmount, usdAmount) => {
   currentView.value = 2; // Move to the third div
-  const { data, error } = await useFetch("https://kbjfree.tv/api/payments", {
+  const { data, error } = await useFetch("http://localhost:3030/api/payments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -149,7 +149,7 @@ const handleBitcoinPayment = async (currency, coinsAmount, usdAmount) => {
 const startPolling = (paymentId) => {
   pollingTimer = setInterval(async () => {
     const { data: statusData, error: statusError } = await useFetch(
-      `https://kbjfree.tv/api/payments/${paymentId}`,
+      `http://localhost:3030/api/payments/${paymentId}`,
       {
         method: "GET",
       }

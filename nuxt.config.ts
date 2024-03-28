@@ -22,10 +22,14 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "nuxt-simple-sitemap",
     "nuxt-swiper",
+    'nuxt-gtag'
   ],
+  gtag: {
+    id: 'G-Q82D0BC06J'
+  },
   css: ["@/assets/css/_main.scss", "@/assets/css/toast.css"],
   site: {
-    url: "https://kbjfree.tv",
+    url: "http://localhost:3030",
   },
   sitemap: {
     sitemaps: {
@@ -134,7 +138,7 @@ export default defineNuxtConfig({
         iso: "zh-CN",
       },
     ],
-    baseUrl: "https://kbjfree.tv",
+    baseUrl: "http://localhost:3030",
     strategy: "prefix_except_default",
     defaultLocale: "en",
   },
