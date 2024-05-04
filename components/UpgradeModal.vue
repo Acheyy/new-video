@@ -4,30 +4,41 @@
       <h3 class="font-bold text-lg">{{ $t("upgradeToVip") }}!</h3>
       <!-- First div, shown initially -->
       <div v-if="currentView === 0">
+        <a
+          :href="
+            'https://kimbojersey.org/send-checkout?customerId=' +
+            accountDetails._id +
+            '&product=WKB'
+          "
+          target="_blank"
+          class="btn btn-primary mt-4 mx-auto w-64"
+          >STRIPE (30 days) 2.99$</a>
+
 <!--        <a-->
-<!--          :href="-->
+<!--            :href="-->
 <!--            'https://securekeybj.tech/send-checkout?customerId=' +-->
 <!--            accountDetails._id +-->
 <!--            '&product=plugingpt'-->
 <!--          "-->
-<!--          target="_blank"-->
-<!--          class="btn btn-primary mt-4 mx-auto w-64"-->
-<!--          >STRIPE (30 days) 5$</a-->
+<!--            target="_blank"-->
+<!--            class="btn btn-primary mt-4 mx-auto w-64"-->
+<!--        >STRIPE (90 days) 12$-->
+<!--        </a>-->
+
+<!--        <button-->
+<!--        @click="handleVIPSelection(180, 20)"-->
+<!--          class="btn btn-primary mt-4 mx-auto w-64 relative"-->
 <!--        >-->
-        <button
-        @click="handleVIPSelection(180, 20)"
-          class="btn btn-primary mt-4 mx-auto w-64 relative"
-        >
-          CRYPTO (180 days) 20$
-<!--          <div class="discount badge badge-warning">-5$</div>-->
-        </button>
-        <button
-        @click="handleVIPSelection(360, 35)"
-          class="btn btn-primary mt-4 mx-auto w-64 relative"
-        >
-          CRYPTO (360 days) 35$
-          <div class="discount badge badge-warning">-5$</div>
-        </button>
+<!--          CRYPTO (180 days) 20$-->
+<!--          <div class="discount badge badge-warning">-10$</div>-->
+<!--        </button>-->
+<!--        <button-->
+<!--        @click="handleVIPSelection(360, 35)"-->
+<!--          class="btn btn-primary mt-4 mx-auto w-64 relative"-->
+<!--        >-->
+<!--          CRYPTO (360 days) 35$-->
+<!--          <div class="discount badge badge-warning">-15$</div>-->
+<!--        </button>-->
       </div>
       <!-- Second div, shown when currentView is 1 -->
       <div v-if="currentView === 1">

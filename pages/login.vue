@@ -90,7 +90,7 @@ setTimeout(() => {
 async function login() {
   v$.value.$validate();
   if (!v$.value.$error) {
-    await $fetch(`https://kbjfree.tv/api/users/login`, {
+    await $fetch(`http://localhost:3030/api/users/login`, {
       method: "POST",
       body: {
         userName: formData.userName,

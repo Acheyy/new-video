@@ -2,6 +2,8 @@
   <div class="hero mt-20 mb-10">
     <div class="hero-content text-center">
       <div>
+        <h1 class="text-3xl font-bold text-pink-400">Fixed registration. Sorry for the inconvenient.</h1>
+        <h3 class="text-xl font-bold text-pink-400 mb-5">For any further technical problems don't hesitate to contact us on discord</h3>
         <h1 class="text-5xl font-bold">
           <span class="text-secondary">KBJFree.TV</span>
         </h1>
