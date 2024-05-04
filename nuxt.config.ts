@@ -5,6 +5,13 @@ export default defineNuxtConfig({
       bodyAttrs: {
         "data-theme": "dracula",
       },
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/disable-devtool',
+          defer: true
+        }
+      ]
+  
     },
   },
   devtools: {

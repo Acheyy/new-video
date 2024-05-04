@@ -62,7 +62,12 @@ const rules = computed(() => {
 });
 const formData = reactive({ userName: "", password: "" });
 const v$ = useVuelidate(rules, formData);
-const token = useCookie("token");
+const token = useCookie("token", {
+  maxAge: 60 * 60 * 24 * 30, // Expires in 30 days
+  path: '/',
+  secure: true,
+  sameSite: 'lax'
+});
 const router = useRouter();
 const goToRegister = () => {
   router.push({ path: `/register` });

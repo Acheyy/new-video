@@ -26,6 +26,14 @@ const i18nHead = useLocaleHead({
   },
 });
 
+
+setTimeout(() => {
+  if(window){
+    window.DisableDevtool();
+  }
+},2000)
+
+
 useHead({
   htmlAttrs: {
     lang: i18nHead.value.htmlAttrs?.lang,

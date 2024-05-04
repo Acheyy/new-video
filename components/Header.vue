@@ -94,6 +94,16 @@
             <li @click="toggleDrawer">
               <a
                 class="link"
+                href="https://l.erodatalabs.com/s/0ab1Nq"
+                target="_blank"
+                rel="nofollow"
+                data-v-1e0d9e0b=""
+                ><img src="https://skbj.b-cdn.net/random/game.webp" data-v-1e0d9e0b="" /> Hentai Game</a
+              >
+            </li>
+            <li @click="toggleDrawer">
+              <a
+                class="link"
                 href="https://theporndude.com"
                 target="_blank"
                 rel="nofollow"

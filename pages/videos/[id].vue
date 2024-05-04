@@ -211,6 +211,35 @@
         >
           VIP Source
         </button>
+
+        <button class="btn btn-sm btn-outline" onclick="my_modal_3.showModal()">
+          {{ $t("screenShots") }}
+        </button>
+        <dialog id="my_modal_3" class="modal">
+          <div class="modal-box max-w-7xl">
+            <div
+              class="snapshots flex flex-wrap justify-center"
+              v-if="video.snapshots.length"
+            >
+              <NuxtImg
+                class="m-1"
+                format="webp"
+                :src="snapshot"
+                v-for="(snapshot, index) in video.snapshots"
+                :alt="video.name + ' ' + (index + 1)"
+                :title="video.name + ' ' + (index + 1)"
+              />
+            </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">{{ $t("close") }}</button>
+              </form>
+            </div>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
       <div class="sources">
         <button class="btn btn-sm btn-neutral m-1 btn-disabled">
@@ -235,9 +264,15 @@
     </h1>
     <p>
       <NuxtLink
-      :to="localePath('/tags/' + tag.slug)"
-
+        :to="localePath('/categories/' + video?.category.slug)"
+        class="btn btn-primary btn-xs m-1 capitalize text-xs" :title="video?.category.name"
+      >
+        {{ video?.category.name }}
+      </NuxtLink>
+      <NuxtLink
+        :to="localePath('/tags/' + tag.slug)"
         class="btn btn-xs m-1 capitalize text-xs"
+        :title="tag.name"
         :class="
           tag._id == '643adac05767bb0f8517fec8'
             ? 'btn-warning'
@@ -249,38 +284,10 @@
       </NuxtLink>
     </p>
 
-    <div class="text-center mt-2">
-      <button class="btn" onclick="my_modal_3.showModal()">
-        {{ $t("screenShots") }}
-      </button>
-      <dialog id="my_modal_3" class="modal">
-        <div class="modal-box max-w-7xl">
-          <div
-            class="snapshots flex flex-wrap justify-center"
-            v-if="video.snapshots.length"
-          >
-            <NuxtImg
-              class="m-1"
-              format="webp"
-              :src="snapshot"
-              v-for="(snapshot, index) in video.snapshots"
-              :alt="video.name + ' ' + (index + 1)"
-              :title="video.name + ' ' + (index + 1)"
-            />
-          </div>
-          <div class="modal-action">
-            <form method="dialog">
-              <button class="btn">{{ $t("close") }}</button>
-            </form>
-          </div>
-        </div>
-        <form method="dialog" class="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
-    </div>
+    <div class="text-center mt-2"></div>
     <div class="text-center mt-2">
       <NuxtLink
+        :title="'Watch ' + video?.actor.name"
         class="inline-block"
         :to="localePath('/all-girls/' + video?.actor.name)"
       >
@@ -406,8 +413,7 @@ const {
 } = await useLazyFetch(`http://localhost:3030/api/videos/${route.params.id}`, {
   credentials: "include",
   headers,
-  onResponse(res) {
-  },
+  onResponse(res) {},
   onResponseError(err) {
     if ((err.response._data.error = "Forbidden")) {
       accountInfoStore.triggerAccountLogin(false);

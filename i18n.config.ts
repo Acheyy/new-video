@@ -90,6 +90,7 @@ export default defineI18nConfig(() => ({
       default: "Default",
       alphabetic: "Alphabetic",
       weeklyTopBJ: "Weekly Top BJ",
+      mostLikedVideos: "Most Liked Videos",
       minimumPay: "Minimum Crypto payment is 15$ for 90 days",
       back: "Back",
       payInfo:
@@ -189,6 +190,7 @@ export default defineI18nConfig(() => ({
       default: "기본값",
       alphabetic: "알파벳 순",
       weeklyTopBJ: "주간 탑 BJ",
+      mostLikedVideos: "가장 많이 좋아한 비디오",
       minimumPay: "최소 암호화폐 결제액은 90일 동안 15달러입니다",
       back: "뒤로",
       payInfo:
@@ -286,6 +288,7 @@ export default defineI18nConfig(() => ({
       default: "默认",
       alphabetic: "字母顺序",
       weeklyTopBJ: "每周顶级BJ",
+      mostLikedVideos: "最受欢迎的视频",
       minimumPay: "最低加密货币支付额为90天15美元",
       back: "返回",
       payInfo:
