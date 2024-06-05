@@ -11,7 +11,6 @@ export default defineNuxtConfig({
           defer: true
         }
       ]
-  
     },
   },
   devtools: {

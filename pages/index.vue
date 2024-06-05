@@ -11,11 +11,21 @@
     <div class="mt-12 mb-2">{{$t('weeklyTopBJ')}}:</div>
     <SidebarActors4 class="mb-8"></SidebarActors4>
 
+
+    <NuxtLink :to="localePath('/most-liked/')" class="text-primary" style="display: inline-flex"><h1 class="mt-4 mb-2 ">{{ $t('mostLiked') }}:</h1></NuxtLink>
+
+    <div class="cards-wrapper">
+      <CardError v-for="index in Array.from({ length: 12 }, (v, k) => k + 1)" :key="index" v-if="error2"></CardError>
+      <CardLoading v-for="index in Array.from({ length: 12 }, (v, k) => k + 1)" v-if="pending2"></CardLoading>
+      <Card v-if="!pending2 && !error2" v-for="(video, index) in videos2?.videos" :data="video"></Card>
+    </div>
+
   </div>
 </template>
 
 <script setup>
 import { useI18n } from "vue-i18n";
+const localePath = useLocalePath();
 
 const { t: $t } = useI18n(); // This is how you destructure the $t function
 useSeoMeta({
@@ -31,6 +41,15 @@ useSeoMeta({
 })
 
 const { pending, data: videos, error } = await useLazyFetch(`http://localhost:3030/api/videos?limit=12`, {
+  onResponseError() {
+    useNuxtApp().$toast.error($t("loadingError"), {
+            autoClose: 10000,
+            theme: "colored",
+            position: "bottom-center",
+        });
+  },
+});
+const { pending2, data: videos2, error2 } = await useLazyFetch(`http://localhost:3030/api/videos/most-liked?limit=12`, {
   onResponseError() {
     useNuxtApp().$toast.error($t("loadingError"), {
             autoClose: 10000,

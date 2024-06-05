@@ -5,6 +5,8 @@
 
     <Header> </Header>
 
+    <Notification />
+
     <div class="container px-2">
       <Breadcrumbs></Breadcrumbs>
 
@@ -15,7 +17,6 @@
   </div>
 </template>
 
-// In your main layout or global navigation guard
 <script setup>
 import { watch } from "vue";
 import { useRouter } from "vue-router";
@@ -26,13 +27,11 @@ const i18nHead = useLocaleHead({
   },
 });
 
-
 setTimeout(() => {
-  if(window){
+  if (window) {
     window.DisableDevtool();
   }
-},2000)
-
+}, 2000);
 
 useHead({
   htmlAttrs: {

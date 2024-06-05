@@ -90,6 +90,11 @@
                 ><Icon name="mdi:tag" size="20" /> {{ $t("tags") }}
               </NuxtLink>
             </li>
+            <li @click="toggleDrawer">
+              <NuxtLink :to="localePath('/reward')" class="py-3"
+                ><Icon name="mdi:coin" size="20" /> Reward
+              </NuxtLink>
+            </li>
             <li></li>
             <li @click="toggleDrawer">
               <a
