@@ -74,7 +74,7 @@ async function searchVideos(startFromFirstPage = false) {
 
     try {
         const response = await fetch(
-            `http://localhost:3030/api/videos/search?searchText=${encodeURIComponent(
+            `https://kbjfree.tv/api/videos/search?searchText=${encodeURIComponent(
                 searchText.value
             )}&page=${currentPage.value}`
         );
@@ -121,14 +121,14 @@ useSeoMeta({
     router.currentRoute.value.query.searchText
       ? router.currentRoute.value.query.searchText
       : ""
-  } - SKBJ`,
-  twitterTitle: `${$t("search")} - SKBJ`,
+  } - KBJFREE`,
+  twitterTitle: `${$t("search")} - KBJFREE`,
   ogTitle: `${$t("entertainment")}`,
   description: `${$t("dive")}`,
   ogDescription: `${$t("dive")}`,
   twitterDescription: `${$t("dive")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social3.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social3.png`,
   twitterCard: `summary_large_image`,
 })
 
@@ -136,14 +136,14 @@ watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("search")} ${route.query.searchText} | Page ${route.query.page} - SKBJ`,
-      twitterTitle: `${$t("search")} - SKBJ`,
+      title: `${$t("search")} ${route.query.searchText} | Page ${route.query.page} - KBJFREE`,
+      twitterTitle: `${$t("search")} - KBJFREE`,
       ogTitle: `${$t("entertainment")}`,
       description: `${$t("dive")}`,
       ogDescription: `${$t("dive")}`,
       twitterDescription: `${$t("dive")}`,
-      ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-      twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+      ogImage: `https://skbj.b-cdn.net/random/social3.png`,
+      twitterImage: `https://skbj.b-cdn.net/random/social3.png`,
       twitterCard: `summary_large_image`,
     });
   }

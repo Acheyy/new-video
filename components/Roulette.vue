@@ -35,7 +35,7 @@
     pending.value = true;
     error.value = null;
     try {
-      const response = await fetch('http://localhost:3030/api/videos/special?limit=3000');
+      const response = await fetch('https://kbjfree.tv/api/videos/special?limit=3000');
       const data = await response.json();
       const shuffled = data.videos.sort(() => 0.5 - Math.random());
       items.value = shuffled.slice(0, 8);

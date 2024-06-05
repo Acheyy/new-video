@@ -29,7 +29,7 @@ const route = useRoute();
 
 const { pending, data: videos, error } = await useLazyFetch(
   () =>
-    `http://localhost:3030/api/videos/most-liked?limit=30&page=${router.currentRoute.value.query.page}`,
+    `https://kbjfree.tv/api/videos/most-liked?limit=30&page=${router.currentRoute.value.query.page}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
@@ -44,14 +44,14 @@ watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("mostLiked")} | Page ${route.query.page} - SKBJ`,
-      twitterTitle: `${$t("mostLiked")} - SKBJ`,
+      title: `${$t("mostLiked")} | Page ${route.query.page} - KBJFREE`,
+      twitterTitle: `${$t("mostLiked")} - KBJFREE`,
       ogTitle: `${$t("mostLiked")}`,
       description: `${$t("bestGirls")}`,
       ogDescription: `${$t("bestGirls")}`,
       twitterDescription: `${$t("bestGirls")}`,
-      ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-      twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+      ogImage: `https://skbj.b-cdn.net/random/social3.png`,
+      twitterImage: `https://skbj.b-cdn.net/random/social3.png`,
       twitterCard: `summary_large_image`,
     });
   }
@@ -61,14 +61,14 @@ useSeoMeta({
     router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-  } - SKBJ`,
-  twitterTitle: `${$t("mostLiked")} - SKBJ`,
+  } - KBJFREE`,
+  twitterTitle: `${$t("mostLiked")} - KBJFREE`,
   ogTitle: `${$t("mostLiked")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social3.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social3.png`,
   twitterCard: `summary_large_image`,
 });
 </script>

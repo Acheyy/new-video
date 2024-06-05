@@ -41,7 +41,7 @@
   
   const { pending, data: videos } = await useLazyFetch(
     () =>
-      `http://localhost:3030/api/videos/getPurchasedVideos`,
+      `https://kbjfree.tv/api/videos/getPurchasedVideos`,
     {
         credentials: "include",
     headers,
@@ -56,14 +56,14 @@
     }
   );
   useSeoMeta({
-  title: `${$t("purchased")} - SKBJ`,
-  twitterTitle: `${$t("purchased")} - SKBJ`,
+  title: `${$t("purchased")} - KBJFREE`,
+  twitterTitle: `${$t("purchased")} - KBJFREE`,
   ogTitle: `${$t("purchased")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,
   twitterDescription: `${$t("bestGirls")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social3.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social3.png`,
   twitterCard: `summary_large_image`,
 });
   </script>

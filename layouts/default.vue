@@ -3,9 +3,9 @@
     <PurchaseCoins></PurchaseCoins>
     <UpgradeModal></UpgradeModal>
 
-    <Header> </Header>
+    <Header></Header>
 
-    <Notification />
+    <!-- <Notification /> -->
 
     <div class="container px-2">
       <Breadcrumbs></Breadcrumbs>
@@ -46,6 +46,25 @@ useHead({
     },
   ],
   meta: [...(i18nHead.value.meta || [])],
+  script: [
+    {
+      async: true,
+      src: "https://www.googletagmanager.com/gtag/js?id=G-7616J1G6LE",
+    },
+    {
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7616J1G6LE');
+      `,
+      type: 'text/javascript',
+      charset: 'utf-8',
+    },
+  ],
+  __dangerouslyDisableSanitizersByTagID: {
+    'gtag-init': ['innerHTML'],
+  },
 });
 const routeHistoryStore = useRouteHistoryStore();
 const router = useRouter();

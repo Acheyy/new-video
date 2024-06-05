@@ -8,7 +8,7 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product=mysteryxtrasmall'
+            '&product3=mysteryxtrasmall'
           "
           class="btn btn-secondary my-2 w-80"
           target="_blank"
@@ -19,7 +19,7 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product=mysterysmallbundle'
+            '&product3=mysterysmallbundle'
           "
           class="btn btn-secondary my-2 w-80"
           target="_blank"
@@ -30,7 +30,7 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product=mysterybundle'
+            '&product3=mysterybundle'
           "
           class="btn btn-secondary my-2 w-80 relative"
           target="_blank"
@@ -42,7 +42,7 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product=mysterybigbundle'
+            '&product3=mysterybigbundle'
           "
           class="btn btn-secondary my-2 w-80 relative"
           target="_blank"
@@ -54,7 +54,7 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product=mysteryxtrabig'
+            '&product3=mysteryxtrabig'
           "
           class="btn btn-secondary my-2 w-80 relative"
           target="_blank"

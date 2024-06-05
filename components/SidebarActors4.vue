@@ -39,7 +39,7 @@ const {
   pending,
   data: actorsData,
 } = await useLazyFetch( 
-  `http://localhost:3030/api/actors/get-most-liked-actors-weekly`
+  `https://kbjfree.tv/api/actors/get-most-liked-actors-weekly`
 );
 </script>
 

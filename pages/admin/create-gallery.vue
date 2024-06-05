@@ -163,7 +163,7 @@ async function submitVideo() {
   formData.append("tags[]", tagIds.value);
   formData.append("actor", actorId.value);
 
-  await $fetch(`http://localhost:3030/api/galleries`, {
+  await $fetch(`https://kbjfree.tv/api/galleries`, {
     method: "POST",
     body: formData,
     onResponse() {
@@ -178,11 +178,11 @@ async function submitVideo() {
   });
 }
 const { data: categories } = await useFetch(
-  `http://localhost:3030/api/categories `
+  `https://kbjfree.tv/api/categories `
 );
-const { data: tagsData } = await useFetch(`http://localhost:3030/api/tags `);
+const { data: tagsData } = await useFetch(`https://kbjfree.tv/api/tags `);
 const { data: actorsData } = await useFetch(
-  `http://localhost:3030/api/actors?limit=9999 `
+  `https://kbjfree.tv/api/actors?limit=9999 `
 );
 </script>
 

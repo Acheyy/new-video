@@ -21,18 +21,18 @@ const { t: $t } = useI18n();
 const localePath = useLocalePath();
 
 useSeoMeta({
-  title: `Categories - SKBJ`,
-  twitterTitle: `Categories - SKBJ`,
+  title: `Categories - KBJFREE`,
+  twitterTitle: `Categories - KBJFREE`,
   ogTitle: `${$t("entertainment")}`,
   description: `${$t("biggest")}`,
   ogDescription: `${$t("biggest")}`,
   twitterDescription: `${$t("biggest")}`,
-  ogImage: `https://skbj.b-cdn.net/random/social2.png`,
-  twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
+  ogImage: `https://skbj.b-cdn.net/random/social3.png`,
+  twitterImage: `https://skbj.b-cdn.net/random/social3.png`,
   twitterCard: `summary_large_image`,
 });
 
 const { data: categories } = await useFetch(
-  `http://localhost:3030/api/categories `
+  `https://kbjfree.tv/api/categories `
 );
 </script>
