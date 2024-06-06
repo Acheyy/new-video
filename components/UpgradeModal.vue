@@ -81,7 +81,7 @@
         <p v-if="paymentDetails">
           You need to cover the network fees. If the status is 'partially_paid'
           it means you didn't send the correct amount to cover the network fees! 
-          You can always contact us at contact@skbj.tv for help or more information
+          You can always contact us at contact@kbjfree.tv for help or more information
         </p>
         <p v-if="paymentDetails">
           <img

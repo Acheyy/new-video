@@ -19,7 +19,7 @@
         copyright infringement to our designated Copyright Agent at the following
         email address:
       </p>
-      <p>Email: <a href="mailto:contact@skbj.tv">contact@skbj.tv</a></p>
+      <p>Email: <a href="mailto:contact@kbjfree.tv">contact@kbjfree.tv</a></p>
       <p>Please include the following information in your DMCA notice:</p>
       <ul>
         <li>

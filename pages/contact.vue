@@ -1,6 +1,6 @@
 <template>
   <div class="text-center mt-24 mb-64">
-    Email: <strong>contact@skbj.tv</strong>
+    Email: <strong>contact@kbjfree.tv</strong>
   </div>
 </template>
 

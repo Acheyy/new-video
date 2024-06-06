@@ -96,7 +96,7 @@ export default defineI18nConfig(() => ({
       minimumPay: "Minimum Crypto payment is 15$ for 90 days",
       back: "Back",
       payInfo:
-        "! You need to cover the network fees. If the status is      'partially_paid' it means you didn't send the correct amount to cover      the network fees ! You can always contact us at contact@skbj.tv for more information",
+        "! You need to cover the network fees. If the status is      'partially_paid' it means you didn't send the correct amount to cover      the network fees ! You can always contact us at contact@kbjfree.tv for more information",
       screenShots: "Screenshots",
       categories: "Categories",
       tags: "Tags",
@@ -206,7 +206,7 @@ export default defineI18nConfig(() => ({
       minimumPay: "최소 암호화폐 결제액은 90일 동안 15달러입니다",
       back: "뒤로",
       payInfo:
-        " 네트워크 수수료를 지불해야 합니다. 상태가 'partially_paid'인 경우 네트워크 수수료를 충당하기 위해 충분한 금액을 보내지 않았다는 의미입니다 ! 더 많은 정보를 원하시면 contact@skbj.tv로 언제든지 문의하실 수 있습니다",
+        " 네트워크 수수료를 지불해야 합니다. 상태가 'partially_paid'인 경우 네트워크 수수료를 충당하기 위해 충분한 금액을 보내지 않았다는 의미입니다 ! 더 많은 정보를 원하시면 contact@kbjfree.tv로 언제든지 문의하실 수 있습니다",
       screenShots: "스크린샷",
       categories: "카테고리",
       tags: "태그",
@@ -313,7 +313,7 @@ export default defineI18nConfig(() => ({
       minimumPay: "最低加密货币支付额为90天15美元",
       back: "返回",
       payInfo:
-        "! 您需要支付网络费用。如果状态显示为'partially_paid'，这意味着您发送的金额不足以支付网络费用！如需更多信息，您可以随时通过contact@skbj.tv与我们联系",
+        "! 您需要支付网络费用。如果状态显示为'partially_paid'，这意味着您发送的金额不足以支付网络费用！如需更多信息，您可以随时通过contact@kbjfree.tv与我们联系",
       screenShots: "屏幕截图",
       categories: "分类",
       tags: "标签",
