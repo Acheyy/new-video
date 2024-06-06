@@ -18,6 +18,7 @@ export const useAccountInfo = defineStore({
         purchasedVideos: [],
         paymentId: null,
         lastRewardClaim: null,
+        isRouletteSpinned: false,
       },
     };
   },
@@ -41,6 +42,7 @@ export const useAccountInfo = defineStore({
         purchasedVideos: user.purchasedVideos,
         paymentId: user.paymentId,
         lastRewardClaim: user.lastRewardClaim,
+        isRouletteSpinned: user.isRouletteSpinned,
       };
     },
     async deleteAccountInfo() {
@@ -55,7 +57,8 @@ export const useAccountInfo = defineStore({
         credit: 0,
         purchasedVideos: [],
         paymentId: null,
-        lastRewardClaim: null
+        lastRewardClaim: null,
+        isRouletteSpinned: false,
       };
     },
   },

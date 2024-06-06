@@ -1,13 +1,13 @@
 <template>
   <div v-if="showNotification" class="notification">
-    <h3>{{ $t("newRewardSystem") }}</h3>
-    <p>{{ $t("greatNews") }}</p>
+    <h3>New Wheel Gamble</h3>
+    <p>Currently only available in English. You can win any video at random!</p>
     <NuxtLink
       @click="dismissNotification"
-      :to="localePath('/reward/')"
+      :to="localePath('/gamble/')"
       class="text-primary"
       style="display: inline-flex"
-      >{{ $t("goToRewards") }}</NuxtLink
+      >Gamble</NuxtLink
     >
 
     <div class="text-right">
