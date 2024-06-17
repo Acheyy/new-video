@@ -1,14 +1,14 @@
 <template>
   <div v-if="showNotification" class="notification">
-    <h3>New Wheel Gamble</h3>
-    <p>Currently only available in English. You can win any video at random!</p>
+    <h3>{{ $t("videoRecommended") }}</h3>
+    <p>{{ $t("videoRecommendedDetails") }}:</p>
     <NuxtLink
       @click="dismissNotification"
-      :to="localePath('/gamble/')"
-      class="text-primary"
+      :to="localePath('/videos/fc6d104a-d078-41c7-a6ae-0f3ddaaa6a24')"
+      class="text-primary text-lg"
       style="display: inline-flex"
-      >Gamble</NuxtLink
-    >
+      >iloveuyo rh__ab Sexy Ass Twerking
+    </NuxtLink>
 
     <div class="text-right">
       <button @click="dismissNotification" class="btn btn-xs btn-success">

@@ -95,6 +95,11 @@
                 ><Icon name="mdi:coin" size="20" /> Reward
               </NuxtLink>
             </li>
+            <li @click="toggleDrawer">
+              <NuxtLink :to="localePath('/gamble')" class="py-3"
+                ><Icon name="mdi:coin" size="20" /> Gamble
+              </NuxtLink>
+            </li>
             <li></li>
             <li @click="toggleDrawer">
               <a

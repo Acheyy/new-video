@@ -123,6 +123,56 @@ export default defineNuxtConfig({
           '/api/__sitemap__/videos16',
         ]
       },
+      'videos-17' : {
+        sources: [
+          '/api/__sitemap__/videos17',
+        ]
+      },
+      'videos-18' : {
+        sources: [
+          '/api/__sitemap__/videos18',
+        ]
+      },
+      'videos-19' : {
+        sources: [
+          '/api/__sitemap__/videos19',
+        ]
+      },
+      'videos-20' : {
+        sources: [
+          '/api/__sitemap__/videos20',
+        ]
+      },
+      'videos-21' : {
+        sources: [
+          '/api/__sitemap__/videos21',
+        ]
+      },
+      'videos-22' : {
+        sources: [
+          '/api/__sitemap__/videos22',
+        ]
+      },
+      'videos-23' : {
+        sources: [
+          '/api/__sitemap__/videos23',
+        ]
+      },
+      'videos-24' : {
+        sources: [
+          '/api/__sitemap__/videos24',
+        ]
+      },
+      'videos-25' : {
+        sources: [
+          '/api/__sitemap__/videos25',
+        ]
+      },
+      'videos-26' : {
+        sources: [
+          '/api/__sitemap__/videos26',
+        ]
+      },
     }
   },
   i18n: {

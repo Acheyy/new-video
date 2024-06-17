@@ -212,7 +212,7 @@
           VIP Source
         </button>
 
-        <button class="btn btn-sm btn-outline" onclick="my_modal_3.showModal()">
+        <button class="btn btn-sm" onclick="my_modal_3.showModal()">
           {{ $t("screenShots") }}
         </button>
         <dialog id="my_modal_3" class="modal">

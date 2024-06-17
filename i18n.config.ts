@@ -108,6 +108,8 @@ export default defineI18nConfig(() => ({
       newRewardSystem: "New Reward System Available!",
       greatNews: "Great News! VIP users can enjoy free daily coin rewards!",
       rewardValue: "The reward value is 2 COINS each day",
+      videoRecommended: "Video recommendation for Ass lovers",
+      videoRecommendedDetails: "She stopped her AfreecaTV streaming a while ago, but she still has one of the best asses",
       doNotClose:
         "Please don't leave this page after you clicked on the Claim button",
     },
@@ -219,6 +221,8 @@ export default defineI18nConfig(() => ({
       greatNews:
         "좋은 소식! VIP 사용자는 매일 무료 코인 보상을 받을 수 있습니다!",
       rewardValue: "보상 가치는 매일 2 코인입니다",
+      videoRecommended: "엉덩이 애호가를 위한 비디오 추천",
+      videoRecommendedDetails: "그녀는 얼마 전에 아프리카TV 방송을 중단했지만, 여전히 최고의 엉덩이 중 하나를 가지고 있습니다",
       doNotClose: "보상 버튼을 클릭한 후에는 이 페이지를 떠나지 마세요",
     },
     cn: {
@@ -325,6 +329,8 @@ export default defineI18nConfig(() => ({
       newRewardSystem: "新奖励系统可用！",
       greatNews: "好消息！VIP 用户每天可以享受免费金币奖励！",
       rewardValue: "奖励价值是每天 2 个金币",
+      videoRecommended: "推荐给臀部爱好者的视频",
+      videoRecommendedDetails: "她前段时间停止了AfreecaTV的直播，但她仍然有最棒的臀部之一",
       doNotClose: "点击领取按钮后，请不要离开此页面",
     },
   },
