@@ -40,7 +40,6 @@
 <script setup>
 import { useAccountInfo } from "~/store/accountInfo";
 import { storeToRefs } from "pinia";
-import { ref, onMounted, defineEmits } from "vue";
 const localePath = useLocalePath();
 const accountInfoStore = useAccountInfo();
 const { isAccountLoggedIn, accountDetails } = storeToRefs(accountInfoStore);
