@@ -8,7 +8,7 @@
           :href="
             'https://securekeybj.tech/send-checkout?customerId=' +
             accountDetails._id +
-            '&product=plugingpt'
+            '&product3=plugingpt'
           "
           target="_blank"
           class="btn btn-primary mt-4 mx-auto w-64"
