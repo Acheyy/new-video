@@ -122,11 +122,11 @@ useSeoMeta({
       ? router.currentRoute.value.query.searchText
       : ""
   } - SKBJ`,
-  twitterTitle: `${$t("search")} - SKBJ`,
-  ogTitle: `${$t("entertainment")}`,
-  description: `${$t("dive")}`,
-  ogDescription: `${$t("dive")}`,
-  twitterDescription: `${$t("dive")}`,
+  twitterTitle: `${$t("search")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("entertainment")} Korean BJ`,
+  description: `${$t("dive")} Korean BJ`,
+  ogDescription: `${$t("dive")} Korean BJ`,
+  twitterDescription: `${$t("dive")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,

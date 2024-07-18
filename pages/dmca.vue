@@ -44,8 +44,8 @@
 const { t: $t } = useI18n();
 
 useSeoMeta({
-  title: `DMCA - SKBJ`,
-  twitterTitle: `DMCA - SKBJ`,
+  title: `DMCA - SKBJ Korean BJ`,
+  twitterTitle: `DMCA - SKBJ Korean BJ`,
   ogTitle: `DMCA`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,

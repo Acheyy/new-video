@@ -1,43 +1,82 @@
 <template>
   <CardBJBiggerLoading v-if="pendingActor"></CardBJBiggerLoading>
-  <CardBJBigger v-else :data="actor" :likesCount="likesCount"></CardBJBigger>
+  <div v-else>
+    <CardBJBigger :data="actor" :likesCount="likesCount"></CardBJBigger>
+
+    <!-- <div class="more-info">
+      {{ actor.namuInfo }}
+    </div> -->
+  </div>
   <div class="flex justify-center mt-4">
     <button class="btn" @click="like">
       <Icon name="mdi:account-minus" size="24" color="#f969d6" v-if="isLiked" />
       <Icon name="mdi:account-plus" size="24" v-else />
     </button>
   </div>
-  <div class="sort-wrapper mt-8 mb-2" v-if="!pendingActor && actor?.totalVideos > 5">
-    <div class="date-sort" @click="sorVideos('date')" :class="{ active: videoOrder == 'date' }">
+
+  <div
+    class="sort-wrapper mt-8 mb-2"
+    v-if="!pendingActor && actor?.totalVideos > 5"
+  >
+    <div
+      class="date-sort"
+      @click="sorVideos('date')"
+      :class="{ active: videoOrder == 'date' }"
+    >
       {{ $t("mostRecent") }}
     </div>
-    <div class="popular-sort" @click="sorVideos('views')" :class="{ active: videoOrder == 'views' }">
+    <div
+      class="popular-sort"
+      @click="sorVideos('views')"
+      :class="{ active: videoOrder == 'views' }"
+    >
       {{ $t("mostPopular") }}
     </div>
-    <div class="likes-sort" @click="sorVideos('likes')" :class="{ active: videoOrder == 'likes' }">
+    <div
+      class="likes-sort"
+      @click="sorVideos('likes')"
+      :class="{ active: videoOrder == 'likes' }"
+    >
       {{ $t("mostLiked") }}
     </div>
-    <div class="vip-sort" @click="sorVideos('vip')" :class="{ active: videoOrder == 'vip' }">
+    <div
+      class="vip-sort"
+      @click="sorVideos('vip')"
+      :class="{ active: videoOrder == 'vip' }"
+    >
       VIP
     </div>
   </div>
 
   <div class="cards-wrapper">
-    <CardLoading v-for="index in Array.from({ length: 12 }, (v, k) => k + 1)" :key="index" v-if="pending"></CardLoading>
+    <CardLoading
+      v-for="index in Array.from({ length: 12 }, (v, k) => k + 1)"
+      :key="index"
+      v-if="pending"
+    ></CardLoading>
     <Card v-else v-for="(video, index) in videos.videos" :data="video"></Card>
   </div>
 
   <div v-if="pending" class="text-center">
-    <Pagination :totalPages="99999" :currentPage="router.currentRoute.value.query.page
-        ? +router.currentRoute.value.query.page
-        : 1
-      "></Pagination>
+    <Pagination
+      :totalPages="99999"
+      :currentPage="
+        router.currentRoute.value.query.page
+          ? +router.currentRoute.value.query.page
+          : 1
+      "
+    ></Pagination>
   </div>
   <div v-if="!pending" class="text-center">
-    <Pagination v-if="+videos.totalPages > 1" :totalPages="+(+videos.totalPages).toFixed(0)" :currentPage="router.currentRoute.value.query.page
-        ? +router.currentRoute.value.query.page
-        : 1
-      "></Pagination>
+    <Pagination
+      v-if="+videos.totalPages > 1"
+      :totalPages="+(+videos.totalPages).toFixed(0)"
+      :currentPage="
+        router.currentRoute.value.query.page
+          ? +router.currentRoute.value.query.page
+          : 1
+      "
+    ></Pagination>
   </div>
 </template>
 
@@ -170,42 +209,51 @@ const like = async () => {
 };
 
 useSeoMeta({
-  title: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
-      router.currentRoute.value.query.orderBy
+  title: `${actor.value.name} - ${$t("allVideos")} ${
+    router.currentRoute.value.query.page ||
+    router.currentRoute.value.query.orderBy
       ? "|"
       : ""
-    } ${router.currentRoute.value.query.page
+  } ${
+    router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-    } ${router.currentRoute.value.query.orderBy
+  } ${
+    router.currentRoute.value.query.orderBy
       ? `Order by  ` + router.currentRoute.value.query.orderBy
       : ""
-    } - SKBJ`,
-  twitterTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
-      router.currentRoute.value.query.orderBy
+  } - SKBJ Korean BJ`,
+  twitterTitle: `${actor.value.name} - ${$t("allVideos")} ${
+    router.currentRoute.value.query.page ||
+    router.currentRoute.value.query.orderBy
       ? "|"
       : ""
-    } ${router.currentRoute.value.query.page
+  } ${
+    router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-    } ${router.currentRoute.value.query.orderBy
+  } ${
+    router.currentRoute.value.query.orderBy
       ? `Order by  ` + router.currentRoute.value.query.orderBy
       : ""
-    } - SKBJ`,
-  ogTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
-      router.currentRoute.value.query.orderBy
+  } - SKBJ Korean BJ`,
+  ogTitle: `${actor.value.name} - ${$t("allVideos")} ${
+    router.currentRoute.value.query.page ||
+    router.currentRoute.value.query.orderBy
       ? "|"
       : ""
-    } ${router.currentRoute.value.query.page
+  } ${
+    router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-    } ${router.currentRoute.value.query.orderBy
+  } ${
+    router.currentRoute.value.query.orderBy
       ? `Order by  ` + router.currentRoute.value.query.orderBy
       : ""
-    } - SKBJ`,
-  description: `${actor.value.name} - ${$t("videosFor")}`,
-  ogDescription: `${actor.value.name} - ${$t("videosFor")}`,
-  twitterDescription: `${actor.value.name} - ${$t("videosFor")}`,
+  } - SKBJ Korean BJ`,
+  description: `${actor.value.name} - ${$t("videosFor")} Korean BJ`,
+  ogDescription: `${actor.value.name} - ${$t("videosFor")} Korean BJ`,
+  twitterDescription: `${actor.value.name} - ${$t("videosFor")} Korean BJ`,
   ogImage: `${actor.value.thumbnail}`,
   twitterImage: `${actor.value.thumbnail}`,
   twitterCard: `summary_large_image`,
@@ -215,42 +263,51 @@ watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
-          router.currentRoute.value.query.orderBy
+      title: `${actor.value.name} - ${$t("allVideos")} ${
+        router.currentRoute.value.query.page ||
+        router.currentRoute.value.query.orderBy
           ? "|"
           : ""
-        } ${router.currentRoute.value.query.page
+      } ${
+        router.currentRoute.value.query.page
           ? `Page ` + router.currentRoute.value.query.page
           : ""
-        } ${router.currentRoute.value.query.orderBy
+      } ${
+        router.currentRoute.value.query.orderBy
           ? `Order by  ` + router.currentRoute.value.query.orderBy
           : ""
-        } - SKBJ`,
-      twitterTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
-          router.currentRoute.value.query.orderBy
+      } - SKBJ Korean BJ`,
+      twitterTitle: `${actor.value.name} - ${$t("allVideos")} ${
+        router.currentRoute.value.query.page ||
+        router.currentRoute.value.query.orderBy
           ? "|"
           : ""
-        } ${router.currentRoute.value.query.page
+      } ${
+        router.currentRoute.value.query.page
           ? `Page ` + router.currentRoute.value.query.page
           : ""
-        } ${router.currentRoute.value.query.orderBy
+      } ${
+        router.currentRoute.value.query.orderBy
           ? `Order by  ` + router.currentRoute.value.query.orderBy
           : ""
-        } - SKBJ`,
-      ogTitle: `${actor.value.name} - ${$t("allVideos")} ${router.currentRoute.value.query.page ||
-          router.currentRoute.value.query.orderBy
+      } - SKBJ Korean BJ`,
+      ogTitle: `${actor.value.name} - ${$t("allVideos")} ${
+        router.currentRoute.value.query.page ||
+        router.currentRoute.value.query.orderBy
           ? "|"
           : ""
-        } ${router.currentRoute.value.query.page
+      } ${
+        router.currentRoute.value.query.page
           ? `Page ` + router.currentRoute.value.query.page
           : ""
-        } ${router.currentRoute.value.query.orderBy
+      } ${
+        router.currentRoute.value.query.orderBy
           ? `Order by  ` + router.currentRoute.value.query.orderBy
           : ""
-        } - SKBJ`,
-      description: `${actor.value.name} - ${$t("videosFor")}`,
-      ogDescription: `${actor.value.name} - ${$t("videosFor")}`,
-      twitterDescription: `${actor.value.name} - ${$t("videosFor")}`,
+      } - SKBJ Korean BJ`,
+      description: `${actor.value.name} - ${$t("videosFor")} Korean BJ`,
+      ogDescription: `${actor.value.name} - ${$t("videosFor")} Korean BJ`,
+      twitterDescription: `${actor.value.name} - ${$t("videosFor")} Korean BJ`,
       ogImage: `${actor.value.thumbnail}`,
       twitterImage: `${actor.value.thumbnail}`,
       twitterCard: `summary_large_image`,

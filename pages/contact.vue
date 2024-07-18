@@ -8,8 +8,8 @@
 const { t: $t } = useI18n();
 
 useSeoMeta({
-  title: `${$t("contact")} - SKBJ`,
-  twitterTitle: `${$t("contact")} - SKBJ`,
+  title: `${$t("contact")} - SKBJ Korean BJ`,
+  twitterTitle: `${$t("contact")} - SKBJ Korean BJ`,
   ogTitle: `${$t("contact")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,

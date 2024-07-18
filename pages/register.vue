@@ -45,12 +45,12 @@ const accountInfoStore = useAccountInfo();
 const { isAccountLoggedIn } = storeToRefs(accountInfoStore);
 const router = useRouter();
 useSeoMeta({
-  title: `${$t("register")} - SKBJ`,
-  twitterTitle: `${$t("register")} - SKBJ`,
-  ogTitle: `${$t("register")}`,
-  description: `${$t("bestGirls")}`,
-  ogDescription: `${$t("bestGirls")}`,
-  twitterDescription: `${$t("bestGirls")}`,
+  title: `${$t("register")} - SKBJ Korean BJ`,
+  twitterTitle: `${$t("register")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("register")} Korean BJ`,
+  description: `${$t("bestGirls")} Korean BJ`,
+  ogDescription: `${$t("bestGirls")} Korean BJ`,
+  twitterDescription: `${$t("bestGirls")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,

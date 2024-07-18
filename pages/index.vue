@@ -29,12 +29,12 @@ const localePath = useLocalePath();
 
 const { t: $t } = useI18n(); // This is how you destructure the $t function
 useSeoMeta({
-  title: `${$t("home")} - SKBJ`,
-  twitterTitle: `${$t("home")} - SKBJ`,
-  ogTitle: `${$t("entertainment")}`,
-  description: `${$t("dive")}`,
-  ogDescription: `${$t("dive")}`,
-  twitterDescription: `${$t("dive")}`,
+  title: `${$t("home")} - SKBJ Korean BJ`,
+  twitterTitle: `${$t("home")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("entertainment")} Korean BJ`,
+  description: `${$t("dive")} Korean BJ`,
+  ogDescription: `${$t("dive")} Korean BJ`,
+  twitterDescription: `${$t("dive")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,

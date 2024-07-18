@@ -56,12 +56,12 @@
     }
   );
   useSeoMeta({
-  title: `${$t("purchased")} - SKBJ`,
-  twitterTitle: `${$t("purchased")} - SKBJ`,
-  ogTitle: `${$t("purchased")}`,
-  description: `${$t("bestGirls")}`,
-  ogDescription: `${$t("bestGirls")}`,
-  twitterDescription: `${$t("bestGirls")}`,
+  title: `${$t("purchased")} - SKBJ Korean BJ`,
+  twitterTitle: `${$t("purchased")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("purchased")} Korean BJ`,
+  description: `${$t("bestGirls")} Korean BJ`,
+  ogDescription: `${$t("bestGirls")} Korean BJ`,
+  twitterDescription: `${$t("bestGirls")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,

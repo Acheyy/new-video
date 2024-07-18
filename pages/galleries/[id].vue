@@ -212,18 +212,18 @@ watch(
       }
 
       useSeoMeta({
-        title: `${newVideo.name} - SKBJ`,
-        twitterTitle: `${newVideo.name} - SKBJ`,
-        ogTitle: `${newVideo.name} - SKBJ`,
+        title: `${newVideo.name} - SKBJ Korean BJ`,
+        twitterTitle: `${newVideo.name} - SKBJ Korean BJ`,
+        ogTitle: `${newVideo.name} - SKBJ Korean BJ`,
         description: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
           "highQuality"
-        )}`,
+        )} Korean BJ`,
         ogDescription: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
           "highQuality"
-        )}`,
+        )} Korean BJ`,
         twitterDescription: `${newVideo.name} - ${newVideo.actor.name} - ${$t(
           "highQuality"
-        )}`,
+        )} Korean BJ`,
         ogImage: `${newVideo.thumbnail}`,
         twitterImage: `${newVideo.thumbnail}`,
         twitterCard: `summary_large_image`,
@@ -320,18 +320,18 @@ async function purchaseVideo() {
 
 if (video.value && video.value.actor) {
   useSeoMeta({
-    title: `${video.value.name} - SKBJ`,
-    twitterTitle: `${video.value.name} - SKBJ`,
-    ogTitle: `${video.value.name} - SKBJ`,
+    title: `${video.value.name} - SKBJ Korean BJ`,
+    twitterTitle: `${video.value.name} - SKBJ Korean BJ`,
+    ogTitle: `${video.value.name} - SKBJ Korean BJ`,
     description: `${video.value.name} - ${video.value.actor.name} - ${$t(
       "highQuality"
-    )}`,
+    )} Korean BJ`,
     ogDescription: `${video.value.name} - ${video.value.actor.name} - ${$t(
       "highQuality"
-    )}`,
+    )} Korean BJ`,
     twitterDescription: `${video.value.name} - ${video.value.actor.name} - ${$t(
       "highQuality"
-    )}`,
+    )} Korean BJ`,
     ogImage: `${video.value.thumbnail}`,
     twitterImage: `${video.value.thumbnail}`,
     twitterCard: `summary_large_image`,

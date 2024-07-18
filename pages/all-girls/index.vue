@@ -73,12 +73,12 @@ watch(
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("BJlist")} | Page ${route.query.page ? route.query.page : '1'} | Order ${route.query.order ? route.query.order : 'default'} - SKBJ`,
-      twitterTitle: `${$t("BJlist")} - SKBJ`,
-      ogTitle: `${$t("BJlist")}`,
-      description: `${$t("bestGirls")}`,
-      ogDescription: `${$t("bestGirls")}`,
-      twitterDescription: `${$t("bestGirls")}`,
+      title: `${$t("BJlist")} | Page ${route.query.page ? route.query.page : '1'} | Order ${route.query.order ? route.query.order : 'default'} - SKBJ Korean BJ`,
+      twitterTitle: `${$t("BJlist")} - SKBJ Korean BJ`,
+      ogTitle: `${$t("BJlist")} Korean BJ`,
+      description: `${$t("bestGirls")} Korean BJ`,
+      ogDescription: `${$t("bestGirls")} Korean BJ`,
+      twitterDescription: `${$t("bestGirls")} Korean BJ`,
       ogImage: `https://skbj.b-cdn.net/random/social2.png`,
       twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
       twitterCard: `summary_large_image`,
@@ -90,12 +90,12 @@ useSeoMeta({
     router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-  } - SKBJ`,
-  twitterTitle: `${$t("BJlist")} - SKBJ`,
-  ogTitle: `${$t("entertainment")}`,
-  description: `${$t("bestGirls")}`,
-  ogDescription: `${$t("bestGirls")}`,
-  twitterDescription: `${$t("bestGirls")}`,
+  } - SKBJ Korean BJ`,
+  twitterTitle: `${$t("BJlist")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("entertainment")} Korean BJ`,
+  description: `${$t("bestGirls")} Korean BJ`,
+  ogDescription: `${$t("bestGirls")} Korean BJ`,
+  twitterDescription: `${$t("bestGirls")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,

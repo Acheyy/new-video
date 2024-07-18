@@ -112,6 +112,8 @@ export default defineI18nConfig(() => ({
       videoRecommendedDetails: "She stopped her AfreecaTV streaming a while ago, but she still has one of the best asses",
       doNotClose:
         "Please don't leave this page after you clicked on the Claim button",
+      download: "Download",
+      bestKoreanBJ: "Best Korean BJ Collection",
     },
     kr: {
       welcome: "Bienvenue",
@@ -224,6 +226,9 @@ export default defineI18nConfig(() => ({
       videoRecommended: "엉덩이 애호가를 위한 비디오 추천",
       videoRecommendedDetails: "그녀는 얼마 전에 아프리카TV 방송을 중단했지만, 여전히 최고의 엉덩이 중 하나를 가지고 있습니다",
       doNotClose: "보상 버튼을 클릭한 후에는 이 페이지를 떠나지 마세요",
+      download: "다운로드",
+      bestKoreanBJ: "베스트 코리안 BJ 컬렉션",
+
     },
     cn: {
       welcome: "欢迎",
@@ -332,6 +337,8 @@ export default defineI18nConfig(() => ({
       videoRecommended: "推荐给臀部爱好者的视频",
       videoRecommendedDetails: "她前段时间停止了AfreecaTV的直播，但她仍然有最棒的臀部之一",
       doNotClose: "点击领取按钮后，请不要离开此页面",
+      download: "下载",
+      bestKoreanBJ: "最佳韩国 BJ 系列",
     },
   },
 }));

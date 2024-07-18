@@ -39,12 +39,12 @@ import { useI18n } from "vue-i18n";
 
 const { t: $t } = useI18n(); 
 useSeoMeta({
-  title: `${$t("allVideos")} - SKBJ`,
-  twitterTitle: `${$t("allVideos")} - SKBJ`,
-  ogTitle: `${$t("entertainment")}`,
-  description: `${$t("biggest")}`,
-  ogDescription: `${$t("biggest")}`,
-  twitterDescription: `${$t("biggest")}`,
+  title: `${$t("allVideos")} - SKBJ Korean BJ`,
+  twitterTitle: `${$t("allVideos")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("entertainment")} Korean BJ`,
+  description: `${$t("biggest")} Korean BJ`,
+  ogDescription: `${$t("biggest")} Korean BJ`,
+  twitterDescription: `${$t("biggest")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,

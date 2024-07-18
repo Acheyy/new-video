@@ -59,12 +59,12 @@
   () => route.query,
   () => {
     useSeoMeta({
-      title: `${$t("specialSales")} | Page ${route.query.page} - SKBJ`,
-      twitterTitle: `${$t("specialSales")} - SKBJ`,
-      ogTitle: `${$t("specialSales")}`,
-      description: `${$t("bestGirls")}`,
-      ogDescription: `${$t("bestGirls")}`,
-      twitterDescription: `${$t("bestGirls")}`,
+      title: `${$t("specialSales")} | Page ${route.query.page} - SKBJ Korean BJ`,
+      twitterTitle: `${$t("specialSales")} - SKBJ Korean BJ`,
+      ogTitle: `${$t("specialSales")} Korean BJ`,
+      description: `${$t("bestGirls")} Korean BJ`,
+      ogDescription: `${$t("bestGirls")} Korean BJ`,
+      twitterDescription: `${$t("bestGirls")} Korean BJ`,
       ogImage: `https://skbj.b-cdn.net/random/social2.png`,
       twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
       twitterCard: `summary_large_image`,
@@ -76,12 +76,12 @@ useSeoMeta({
     router.currentRoute.value.query.page
       ? `Page ` + router.currentRoute.value.query.page
       : ""
-  } - SKBJ`,
-  twitterTitle: `${$t("specialSales")} - SKBJ`,
-  ogTitle: `${$t("specialSales")}`,
-  description: `${$t("bestGirls")}`,
-  ogDescription: `${$t("bestGirls")}`,
-  twitterDescription: `${$t("bestGirls")}`,
+  } - SKBJ Korean BJ`,
+  twitterTitle: `${$t("specialSales")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("specialSales")} Korean BJ`,
+  description: `${$t("bestGirls")} Korean BJ`,
+  ogDescription: `${$t("bestGirls")} Korean BJ`,
+  twitterDescription: `${$t("bestGirls")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,

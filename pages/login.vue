@@ -73,8 +73,8 @@ const goToRegister = () => {
   router.push({ path: `/register` });
 };
 useSeoMeta({
-  title: `${$t("login")} - SKBJ`,
-  twitterTitle: `${$t("login")} - SKBJ`,
+  title: `${$t("login")} - SKBJ Korean BJ`,
+  twitterTitle: `${$t("login")} - SKBJ Korean BJ`,
   ogTitle: `${$t("login")}`,
   description: `${$t("bestGirls")}`,
   ogDescription: `${$t("bestGirls")}`,

@@ -679,12 +679,12 @@ const recommendedBJ = ref({
 });
 
 useSeoMeta({
-  title: `${$t("error")} - SKBJ`,
-  twitterTitle: `${$t("error")} - SKBJ`,
-  ogTitle: `${$t("error")} - SKBJ`,
-  description: `${$t("dive")}`,
-  ogDescription: `${$t("dive")}`,
-  twitterDescription: `${$t("dive")}`,
+  title: `${$t("error")} - SKBJ Korean BJ`,
+  twitterTitle: `${$t("error")} - SKBJ Korean BJ`,
+  ogTitle: `${$t("error")} - SKBJ Korean BJ`,
+  description: `${$t("dive")} Korean BJ`,
+  ogDescription: `${$t("dive")} Korean BJ`,
+  twitterDescription: `${$t("dive")} Korean BJ`,
   ogImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
