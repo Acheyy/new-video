@@ -293,6 +293,27 @@ const redirectPaths = [
   '/videos/87e918f0-b547-46f2-9fe7-fddd7fe33272',
   '/kr/videos/87e918f0-b547-46f2-9fe7-fddd7fe33272',
   '/cn/videos/87e918f0-b547-46f2-9fe7-fddd7fe33272',
+  
+
+  '/videos/f2b3978b-0a90-4f33-bfa2-e77c56245005',
+  '/kr/videos/f2b3978b-0a90-4f33-bfa2-e77c56245005',
+  '/cn/videos/f2b3978b-0a90-4f33-bfa2-e77c56245005',
+  
+
+  '/videos/411cd0ef-e7f0-4924-bf21-8e8a15ec6a8e',
+  '/kr/videos/411cd0ef-e7f0-4924-bf21-8e8a15ec6a8e',
+  '/cn/videos/411cd0ef-e7f0-4924-bf21-8e8a15ec6a8e',
+  
+
+  '/videos/5585053a-62d6-47e7-8a62-2c93fd0fec3f',
+  '/kr/videos/5585053a-62d6-47e7-8a62-2c93fd0fec3f',
+  '/cn/videos/5585053a-62d6-47e7-8a62-2c93fd0fec3f',
+  
+
+  '/bj-list/ahrin',
+  '/kr/bj-list/ahrin',
+  '/cn/bj-list/ahrin',
+  
 ]
 
 const handleRedirection = () => {
