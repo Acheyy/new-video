@@ -1,7 +1,7 @@
 <template>
-  <p class="text-center">{{ $t("rewardValue") }}</p>
+  <p class="text-center mt-12">{{ $t("rewardValue") }}</p>
   <p class="text-center">{{ $t("doNotClose") }}</p>
-  <div class="text-center">
+  <div class="text-center mt-4">
     <button
       v-if="isAccountLoggedIn && accountDetails.isUserPremium"
       :class="[
@@ -23,7 +23,7 @@
     </p>
   </div>
 
-  <div class="ads flex flex-wrap justify-center mt-4">
+  <div class="ads flex flex-wrap justify-center mt-36">
     <iframe
       src="//a.magsrv.com/iframe.php?idzone=5323276&size=300x250"
       width="300"

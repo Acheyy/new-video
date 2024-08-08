@@ -77,7 +77,8 @@
             </li>
             <li @click="toggleDrawer">
               <NuxtLink :to="localePath('/galleries')" class="py-3"
-                ><Icon name="mdi:picture" size="20" /> {{ $t("galleries") }}</NuxtLink
+                ><Icon name="mdi:picture" size="20" />
+                {{ $t("galleries") }}</NuxtLink
               >
             </li>
             <li @click="toggleDrawer">
@@ -108,7 +109,11 @@
                 target="_blank"
                 rel="nofollow"
                 data-v-1e0d9e0b=""
-                ><img src="https://skbj.b-cdn.net/random/game.webp" data-v-1e0d9e0b="" /> Hentai Game</a
+                ><img
+                  src="https://skbj.b-cdn.net/random/game.webp"
+                  data-v-1e0d9e0b=""
+                />
+                Hentai Game</a
               >
             </li>
             <li @click="toggleDrawer">
@@ -153,9 +158,39 @@
       >
         <img src="/images/skbjLogo.png"
       /></NuxtLink>
+      <div class="main-up-nav max-lg:!hidden">
+        <NuxtLink :to="localePath('/')"
+          ><div class="btn btn-ghost">
+            <Icon name="mdi:home" size="20" />
+            {{ $t("home") }}
+          </div>
+        </NuxtLink>
+
+        <NuxtLink :to="localePath('/videos')"
+          ><div class="btn btn-ghost">
+            <Icon name="mdi:all-inclusive" size="20" /> {{ $t("allVideos") }}
+          </div></NuxtLink
+        >
+        <NuxtLink :to="localePath('/all-girls')"
+          ><div class="btn btn-ghost">
+            <Icon name="mdi:list-box-outline" size="20" /> {{ $t("BJlist") }}
+          </div></NuxtLink
+        >
+        <NuxtLink :to="localePath('/special-sales')"
+          ><div class="btn btn-ghost">
+            <Icon name="mdi:gift" size="20" /> {{ $t("specialSales") }}
+          </div></NuxtLink
+        >
+        <NuxtLink :to="localePath('/reward')"
+          ><div class="btn btn-ghost">
+            <Icon name="mdi:coin" size="20" /> Reward
+          </div>
+        </NuxtLink>
+      </div>
     </div>
+
     <div class="flex-none">
-      <LanguageSelector class="max-sm:!hidden"></LanguageSelector>
+      <!-- <LanguageSelector class="max-sm:!hidden"></LanguageSelector> -->
 
       <NuxtLink :to="localePath('/search')" class="btn btn-sm btn-ghost ml-1">
         <Icon name="mdi:magnify" size="20" />
@@ -393,6 +428,14 @@ function logout() {
     margin-left: 0;
     max-width: 20px;
     max-height: calc(100% - 4px);
+  }
+}
+.main-up-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  a {
+    margin: 0 2px;
   }
 }
 </style>

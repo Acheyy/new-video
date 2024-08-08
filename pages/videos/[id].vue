@@ -325,9 +325,7 @@ const {
   credentials: "include",
   headers,
   onResponse(res) {
-    console.log("here", res.response._data.createdAt);
     if (res.response._data.createdAt < '2024-07-16T19:15:06.962+00:00') {
-      console.log("here2")
       sourceZero.value = false;
       sourceSB.value = true;
     }
@@ -355,6 +353,12 @@ watch(
     if (newVideo && newAccountDetails) {
       isLiked.value = newVideo.likes.includes(newAccountDetails._id);
       likesCount.value = newVideo.likes.length;
+
+      if (newVideo.createdAt < '2024-07-16T19:15:06.962+00:00') {
+        sourceZero.value = false;
+        sourceSB.value = true;
+      }
+
       // fileNamee.value = newVideo.fileName;
       if (estimatedSize > 3000) {
         cookieVideoId.value = null;
