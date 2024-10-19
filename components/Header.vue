@@ -354,7 +354,7 @@ onUnmounted(() => {
 });
 
 if (token.value) {
-  await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
+  await useLazyFetch(`https://skbj.tv/api/users/getInfo`, {
     server: false,
     credentials: "include",
 

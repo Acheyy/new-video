@@ -121,7 +121,7 @@
           Source 3
         </button>
         <button class="btn btn-sm btn-neutral m-1" @click="changeToVIP('changeSource')"
-          v-if="video.createdAt >= '2023-05-01T22:07:18.813+00:00'">
+          v-if="video.createdAt >= '2023-05-01T22:07:18.813+00:00' && video.createdAt <= '2023-07-26T12:47:00.564+00:00'">
           VIP Source
         </button>
 
@@ -321,7 +321,7 @@ const {
   pending,
   data: video,
   error,
-} = await useLazyFetch(`http://localhost:3030/api/videos/${route.params.id}`, {
+} = await useLazyFetch(`https://skbj.tv/api/videos/${route.params.id}`, {
   credentials: "include",
   headers,
   onResponse(res) {
@@ -345,7 +345,7 @@ const {
 // }
 
 const { pending: pendingRecommended, data: videosRecommended } =
-  await useLazyFetch(`http://localhost:3030/api/videos/random`, {});
+  await useLazyFetch(`https://skbj.tv/api/videos/random`, {});
 
 watch(
   [video, accountDetails],
@@ -412,7 +412,7 @@ const like = async () => {
     likesCount.value--;
   }
 
-  fetch(`http://localhost:3030/api/videos/like/${video.value._id}`, {
+  fetch(`https://skbj.tv/api/videos/like/${video.value._id}`, {
     credentials: "include",
   });
 };
@@ -423,7 +423,7 @@ async function purchaseVideo() {
 
   try {
     const response = await $fetch(
-      `http://localhost:3030/api/users/purchaseVideo`,
+      `https://skbj.tv/api/users/purchaseVideo`,
       {
         method: "POST",
         body: {
@@ -443,7 +443,7 @@ async function purchaseVideo() {
       });
     } else {
       // If no error, update account info
-      await $fetch(`http://localhost:3030/api/users/getInfo`, {
+      await $fetch(`https://skbj.tv/api/users/getInfo`, {
         server: false,
         credentials: "include",
         onResponse(res) {
@@ -467,7 +467,7 @@ async function purchaseVideo() {
         position: "bottom-center",
       }
     );
-    await $fetch(`http://localhost:3030/api/users/getInfo`, {
+    await $fetch(`https://skbj.tv/api/users/getInfo`, {
       server: false,
       credentials: "include",
       onResponse(res) {

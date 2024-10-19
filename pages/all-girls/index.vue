@@ -107,7 +107,7 @@ const {
   error,
 } = await useLazyFetch(
   () =>
-    `http://localhost:3030/api/actors?page=${router.currentRoute.value.query.page}&order=${router.currentRoute.value.query.order}`,
+    `https://skbj.tv/api/actors?page=${router.currentRoute.value.query.page}&order=${router.currentRoute.value.query.order}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {

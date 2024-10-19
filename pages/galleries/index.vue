@@ -53,7 +53,7 @@ const router = useRouter();
 
 const { pending, data: videos, error } = await useLazyFetch(
   () =>
-    `http://localhost:3030/api/galleries?limit=30&page=${router.currentRoute.value.query.page}`,
+    `https://skbj.tv/api/galleries?limit=30&page=${router.currentRoute.value.query.page}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {

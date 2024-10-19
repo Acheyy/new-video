@@ -74,7 +74,7 @@ async function searchVideos(startFromFirstPage = false) {
 
     try {
         const response = await fetch(
-            `http://localhost:3030/api/videos/search?searchText=${encodeURIComponent(
+            `https://skbj.tv/api/videos/search?searchText=${encodeURIComponent(
                 searchText.value
             )}&page=${currentPage.value}`
         );

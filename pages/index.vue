@@ -40,7 +40,7 @@ useSeoMeta({
   twitterCard: `summary_large_image`,
 })
 
-const { pending, data: videos, error } = await useLazyFetch(`http://localhost:3030/api/videos?limit=12`, {
+const { pending, data: videos, error } = await useLazyFetch(`https://skbj.tv/api/videos?limit=12`, {
   onResponseError() {
     useNuxtApp().$toast.error($t("loadingError"), {
             autoClose: 10000,
@@ -49,7 +49,7 @@ const { pending, data: videos, error } = await useLazyFetch(`http://localhost:30
         });
   },
 });
-const { pending2, data: videos2, error2 } = await useLazyFetch(`http://localhost:3030/api/videos/most-liked?limit=12`, {
+const { pending2, data: videos2, error2 } = await useLazyFetch(`https://skbj.tv/api/videos/most-liked?limit=12`, {
   onResponseError() {
     useNuxtApp().$toast.error($t("loadingError"), {
             autoClose: 10000,

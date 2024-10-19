@@ -30,7 +30,7 @@ useSeoMeta({
 });
 
 const { pending, data: actorsData } = await useLazyFetch(
-  () => `http://localhost:3030/api/actors/following`,
+  () => `https://skbj.tv/api/actors/following`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {

@@ -1,64 +1,41 @@
 <template>
-    <div class="left-content">
-        <div class="player-wrapper relative mt-10 bg-base-200 ">
-            <div loading="lazy" class="main-player absolute"
-                allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;" allowfullscreen="true"></div>
-        </div>
-        <div class="sources justify-between">
-      <div class="sources">
-        <button class="btn btn-sm btn-neutral m-1">Error..</button>
-        <button class="btn btn-sm btn-neutral m-1">Error..</button>
-      </div>
-      <div class="sources">
-        <button class="btn btn-sm btn-neutral w-16  m-1 btn-disabled">
-          <Icon name="mdi:eye" size="18" color="gray" />
-          
-        </button>
-        <button class="btn btn-sm btn-neutral m-1 w-16 " >
-          <div class="flex items-center">
-            <Icon name="mdi:heart" size="18" color="gray" class="mr-1" />
-          </div>
-        </button>
-      </div>
-    </div>        <h1 class="main-title text-xl bg-base-200  my-1">Error..</h1>
-        <p>
-        <div class="btn btn-xs m-1 uppercase text-xs " v-for="index in Array.from({ length: 2 }, (v, k) => k + 1)">
-            "Error.."
-        </div>
-        </p>
-
-        <CardBJBiggerLoading></CardBJBiggerLoading>
-
-    </div>
+  <div class="not-found">
+    <h1>404 - Page Not Found</h1>
+    <p>The page you are looking for doesn't exist or has been moved.</p>
+    <nuxt-link to="/" class="home-link">Go back to Home</nuxt-link>
+  </div>
 </template>
 
-<style scoped lang="scss">
-.player-wrapper {
-  padding-top: 56.25%;
-  width: 100%;
+<script setup>
+// This component doesn't need any script logic for now
+</script>
 
-  .main-player {
-    border: none;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.1s ease;
-
-    &.is-loaded {
-      opacity: 1;
-    }
-  }
-}
-
-.main-title {
-  height: 1.75rem;
-}
-
-.sources {
+<style scoped>
+.not-found {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  height: 80vh;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.not-found p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-link {
+  padding: 0.8rem 1.5rem;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 </style>

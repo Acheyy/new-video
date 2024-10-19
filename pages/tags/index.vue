@@ -27,5 +27,5 @@ useSeoMeta({
   twitterImage: `https://skbj.b-cdn.net/random/social2.png`,
   twitterCard: `summary_large_image`,
 });
-const { data: tagsData } = await useFetch(`http://localhost:3030/api/tags `);
+const { data: tagsData } = await useFetch(`https://skbj.tv/api/tags `);
 </script>

@@ -168,7 +168,7 @@ const startCountdown = () => {
 const claimReward = async () => {
   try {
     const response = await fetch(
-      "http://localhost:3030/api/users/rewardClaim",
+      "https://skbj.tv/api/users/rewardClaim",
       {
         method: "POST",
         headers: {
@@ -187,7 +187,7 @@ const claimReward = async () => {
     console.log("Reward claimed successfully:", data);
 
     if (token.value) {
-      await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
+      await useLazyFetch(`https://skbj.tv/api/users/getInfo`, {
         server: false,
         credentials: "include",
 

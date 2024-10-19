@@ -21,7 +21,7 @@ const handleNameInput = (event) => {
   console.log(event.target.value);
 };
 async function submitVideo() {
-  await $fetch(`http://localhost:3030/api/categories`, {
+  await $fetch(`https://skbj.tv/api/categories`, {
     method: "POST",
     body: { name: nameInput.value },
   });

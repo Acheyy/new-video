@@ -71,7 +71,7 @@ const fetchData = async () => {
   error.value = null;
   try {
     const response = await fetch(
-      "http://localhost:3030/api/videos/special?limit=3000"
+      "https://skbj.tv/api/videos/special?limit=3000"
     );
     const data = await response.json();
     console.log("test1", accountDetails.value.isRouletteSpinned);
@@ -339,7 +339,7 @@ const spin = async () => {
   await fetchData();
   try {
     const deductResponse = await fetch(
-      "http://localhost:3030/api/users/deductCoins",
+      "https://skbj.tv/api/users/deductCoins",
       {
         method: "POST",
         headers: {
@@ -358,7 +358,7 @@ const spin = async () => {
         theme: "colored",
         position: "bottom-center",
       });
-      await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
+      await useLazyFetch(`https://skbj.tv/api/users/getInfo`, {
         server: false,
         credentials: "include",
 
@@ -380,7 +380,7 @@ const spin = async () => {
     }
 
     // Update account info after deducting coins
-    await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
+    await useLazyFetch(`https://skbj.tv/api/users/getInfo`, {
       server: false,
       credentials: "include",
 

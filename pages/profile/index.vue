@@ -72,7 +72,7 @@ const router = useRouter();
 const headers = useRequestHeaders(["cookie"]);
 
 const { pending, data: videosHistory } = await useLazyFetch(
-    () => `http://localhost:3030/api/users/getUserHistory`,
+    () => `https://skbj.tv/api/users/getUserHistory`,
     {
         onResponseError() {
             useNuxtApp().$toast.error($t("loadingError"), {
@@ -87,7 +87,7 @@ const { pending, data: videosHistory } = await useLazyFetch(
 );
 const { pending: pendingLiked, data: videosLiked } = await useLazyFetch(
     () =>
-        `http://localhost:3030/api/users/getUserLiked?page=${router.currentRoute.value.query.page}`,
+        `https://skbj.tv/api/users/getUserLiked?page=${router.currentRoute.value.query.page}`,
     {
         onResponseError() {
             useNuxtApp().$toast.error($t("loadingError"), {

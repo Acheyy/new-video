@@ -1,13 +1,12 @@
 <template>
   <div v-if="showNotification" class="notification">
     <h3>{{ $t("videoRecommended") }}</h3>
-    <p>{{ $t("videoRecommendedDetails") }}:</p>
+    <p>{{ $t("videoRecommendedDetails") }}</p>
     <NuxtLink
-      @click="dismissNotification"
-      :to="localePath('/videos/fc6d104a-d078-41c7-a6ae-0f3ddaaa6a24')"
+      :to="localePath('/contact')"
       class="text-primary text-lg"
       style="display: inline-flex"
-      >iloveuyo rh__ab Sexy Ass Twerking
+      >Contact
     </NuxtLink>
 
     <div class="text-right">
