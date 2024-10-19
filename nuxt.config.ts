@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   ],
   css: ["@/assets/css/_main.scss", "@/assets/css/toast.css"],
   site: {
-    url: "https://skbj.tv",
+    url: "http://localhost:3030",
   },
   sitemap: {
     sitemaps: {
@@ -136,7 +136,7 @@ export default defineNuxtConfig({
         iso: "zh-CN",
       },
     ],
-    baseUrl: "https://skbj.tv",
+    baseUrl: "http://localhost:3030",
     strategy: "prefix_except_default",
     defaultLocale: "en",
   },

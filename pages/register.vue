@@ -78,7 +78,7 @@ async function submitVideo() {
 
     v$.value.$validate();
     if (!v$.value.$error) {
-        await $fetch(`https://skbj.tv/api/users`, {
+        await $fetch(`http://localhost:3030/api/users`, {
             method: "POST",
             body: {
                 userName: sanitizeduserName.replace(/\s+/g, ""),
@@ -93,7 +93,7 @@ async function submitVideo() {
                         theme: "colored",
                         position: "bottom-center",
                     });
-                    await $fetch(`https://skbj.tv/api/users/sendConfirmation`, {
+                    await $fetch(`http://localhost:3030/api/users/sendConfirmation`, {
                         method: "POST",
                         body: { username: sanitizeduserName, to: sanitizedemail },
                     });

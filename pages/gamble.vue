@@ -62,7 +62,7 @@ const handleResult = async (winningItem) => {
 
   try {
     const response = await $fetch(
-      "https://skbj.tv/api/users/addVideoReward",
+      "http://localhost:3030/api/users/addVideoReward",
       {
         method: "POST",
         body: {
@@ -74,7 +74,7 @@ const handleResult = async (winningItem) => {
     );
 
     if (response.success) {
-      await useLazyFetch(`https://skbj.tv/api/users/getInfo`, {
+      await useLazyFetch(`http://localhost:3030/api/users/getInfo`, {
         server: false,
         credentials: "include",
 

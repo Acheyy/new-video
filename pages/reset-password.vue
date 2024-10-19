@@ -55,7 +55,7 @@ async function login() {
   v$.value.$validate();
   console.log(v$.value.password.$error);
   if (!v$.value.$error) {
-    await $fetch(`https://skbj.tv/api/users/resetPassword`, {
+    await $fetch(`http://localhost:3030/api/users/resetPassword`, {
       method: "POST",
       body: {
         newPassword: formData.password,

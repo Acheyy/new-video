@@ -96,7 +96,7 @@ const isLiked = ref(false);
 const likesCount = ref(0);
 
 const { pendingActor, data: actor } = await useFetch(
-  `https://skbj.tv/api/actors/${route.params.actorName}`,
+  `http://localhost:3030/api/actors/${route.params.actorName}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
@@ -114,7 +114,7 @@ const {
   data: videos,
 } = await useLazyFetch(
   () =>
-    `https://skbj.tv/api/videos/videosByActor?actor=${route.params.actorName}&limit=12&orderBy=${videoOrder.value}&page=${router.currentRoute.value.query.page}`,
+    `http://localhost:3030/api/videos/videosByActor?actor=${route.params.actorName}&limit=12&orderBy=${videoOrder.value}&page=${router.currentRoute.value.query.page}`,
   {
     onResponseError() {
       useNuxtApp().$toast.error($t("loadingError"), {
@@ -175,7 +175,7 @@ const like = async () => {
 
   try {
     const response = await fetch(
-      `https://skbj.tv/api/actors/like/${actor.value._id}`,
+      `http://localhost:3030/api/actors/like/${actor.value._id}`,
       {
         credentials: "include",
       }

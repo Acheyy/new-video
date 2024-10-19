@@ -41,7 +41,7 @@
   
   const { pending, data: videos } = await useLazyFetch(
     () =>
-      `https://skbj.tv/api/videos/getPurchasedVideos`,
+      `http://localhost:3030/api/videos/getPurchasedVideos`,
     {
         credentials: "include",
     headers,

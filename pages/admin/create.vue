@@ -200,7 +200,7 @@ async function submitVideo() {
     );
   });
 
-  await $fetch(`https://skbj.tv/api/videos`, {
+  await $fetch(`http://localhost:3030/api/videos`, {
     method: "POST",
     body: formData,
     onResponse() {
@@ -215,11 +215,11 @@ async function submitVideo() {
   });
 }
 const { data: categories } = await useFetch(
-  `https://skbj.tv/api/categories `
+  `http://localhost:3030/api/categories `
 );
-const { data: tagsData } = await useFetch(`https://skbj.tv/api/tags `);
+const { data: tagsData } = await useFetch(`http://localhost:3030/api/tags `);
 const { data: actorsData } = await useFetch(
-  `https://skbj.tv/api/actors?limit=9999 `
+  `http://localhost:3030/api/actors?limit=9999 `
 );
 </script>
 

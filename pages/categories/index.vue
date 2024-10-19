@@ -33,6 +33,6 @@ useSeoMeta({
 });
 
 const { data: categories } = await useFetch(
-  `https://skbj.tv/api/categories `
+  `http://localhost:3030/api/categories `
 );
 </script>

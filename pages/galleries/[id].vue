@@ -166,7 +166,7 @@ const {
   data: video,
   error,
 } = await useLazyFetch(
-  `https://skbj.tv/api/galleries/${route.params.id}`,
+  `http://localhost:3030/api/galleries/${route.params.id}`,
   {
     credentials: "include",
     headers,
@@ -190,7 +190,7 @@ const {
 // }
 
 const { pending: pendingRecommended, data: videosRecommended } =
-  await useLazyFetch(`https://skbj.tv/api/videos/random`, {});
+  await useLazyFetch(`http://localhost:3030/api/videos/random`, {});
 
 watch(
   [video, accountDetails],
@@ -251,7 +251,7 @@ const like = async () => {
     likesCount.value--;
   }
 
-  fetch(`https://skbj.tv/api/videos/like/${video.value._id}`, {
+  fetch(`http://localhost:3030/api/videos/like/${video.value._id}`, {
     credentials: "include",
   });
 };
@@ -262,7 +262,7 @@ async function purchaseVideo() {
 
   try {
     const response = await $fetch(
-      `https://skbj.tv/api/users/purchaseVideo`,
+      `http://localhost:3030/api/users/purchaseVideo`,
       {
         method: "POST",
         body: {
@@ -282,7 +282,7 @@ async function purchaseVideo() {
       });
     } else {
       // If no error, update account info
-      await $fetch(`https://skbj.tv/api/users/getInfo`, {
+      await $fetch(`http://localhost:3030/api/users/getInfo`, {
         server: false,
         credentials: "include",
         onResponse(res) {
@@ -306,7 +306,7 @@ async function purchaseVideo() {
         position: "bottom-center",
       }
     );
-    await $fetch(`https://skbj.tv/api/users/getInfo`, {
+    await $fetch(`http://localhost:3030/api/users/getInfo`, {
       server: false,
       credentials: "include",
       onResponse(res) {
