@@ -91,16 +91,16 @@
                 ><Icon name="mdi:tag" size="20" /> {{ $t("tags") }}
               </NuxtLink>
             </li>
-            <li @click="toggleDrawer">
+            <!-- <li @click="toggleDrawer">
               <NuxtLink :to="localePath('/reward')" class="py-3"
                 ><Icon name="mdi:coin" size="20" /> Reward
               </NuxtLink>
-            </li>
-            <li @click="toggleDrawer">
+            </li> -->
+            <!-- <li @click="toggleDrawer">
               <NuxtLink :to="localePath('/gamble')" class="py-3"
                 ><Icon name="mdi:coin" size="20" /> Gamble
               </NuxtLink>
-            </li>
+            </li> -->
             <li></li>
             <li @click="toggleDrawer">
               <a
@@ -181,11 +181,11 @@
             <Icon name="mdi:gift" size="20" /> {{ $t("specialSales") }}
           </div></NuxtLink
         >
-        <NuxtLink :to="localePath('/reward')"
+        <!-- <NuxtLink :to="localePath('/reward')"
           ><div class="btn btn-ghost">
             <Icon name="mdi:coin" size="20" /> Reward
           </div>
-        </NuxtLink>
+        </NuxtLink> -->
       </div>
     </div>
 
